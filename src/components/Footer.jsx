@@ -82,7 +82,7 @@ export default function Footer() {
       </div>
       <div className="footer-bottom-box">
         <div data-w-id="564f99af-077a-9408-a510-71268355b5c9" className="footrer-copyright-box">
-          <div className="description gray">Design & Developed By <a href="https://webflow.com/templates/designers/waida-studio" target="_blank" rel="noopener noreferrer" className="black-link">Waida Studio </a>- <a href="/licenses" className="black-link">License </a>| Powered By <a href="https://webflow.com/" target="_blank" rel="noopener noreferrer" className="black-link">Webflow</a></div>
+          <div className="description gray">© {new Date().getFullYear()} Ramteja Constructions. All Rights Reserved.</div>
         </div>
       </div>
     </section>

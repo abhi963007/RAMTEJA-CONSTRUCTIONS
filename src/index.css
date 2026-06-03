@@ -77,7 +77,8 @@ body, html {
 }
 
 .section.hero-service .hero-servoce-content {
-  font-size: clamp(17px, 1.6vw, 22px) !important;
+  font-family: 'Old Standard TT', serif !important;
+  font-size: clamp(20px, 1.9vw, 26px) !important;
   line-height: 1.65 !important;
   max-width: 760px !important;
   margin: 0 auto !important;
