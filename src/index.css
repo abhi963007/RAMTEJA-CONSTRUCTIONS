@@ -24,6 +24,43 @@ body, html {
   width: 100% !important;
 }
 
+/* Service cards: full-width sticky stacking cards */
+.hero-service-single-card {
+  max-width: 100% !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.hero-service-image-box-wrap {
+  width: 100% !important;
+  border-radius: 24px !important;
+}
+
+.hero-service-image-box {
+  width: 100% !important;
+  aspect-ratio: 16 / 7 !important;
+  overflow: hidden !important;
+  border-radius: 24px !important;
+}
+
+.hero-service-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+.hero-service-content-box {
+  max-width: 100% !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.service-inner-wrap {
+  width: 100% !important;
+}
+
+
 
 .section.hero {
   min-height: 100vh !important;
