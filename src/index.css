@@ -315,7 +315,7 @@ body, html {
 }
 
 .footer-logo {
-  height: 108px !important;
+  height: 160px !important;
   width: auto !important;
   max-height: none !important;
   max-width: none !important;
@@ -328,7 +328,7 @@ body, html {
   }
 
   .footer-logo {
-    height: 88px !important;
+    height: 120px !important;
   }
 }
 
