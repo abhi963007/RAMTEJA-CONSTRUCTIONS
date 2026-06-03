@@ -1,5 +1,6 @@
 import React from 'react';
 import Hero from '../components/Hero';
+import WhoWeAre from '../components/WhoWeAre';
 import AboutSummary from '../components/AboutSummary';
 import BrandTicker from '../components/BrandTicker';
 import Stats from '../components/Stats';
@@ -17,6 +18,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <WhoWeAre />
       <AboutSummary />
       <BrandTicker />
       <Stats />
