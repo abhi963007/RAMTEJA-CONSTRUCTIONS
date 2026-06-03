@@ -128,7 +128,7 @@ body, html {
 
 /* Logo image rendering — inverts the dark outlines to white for dark navbar */
 .navbar-logo-image {
-  height: 112px !important;
+  height: 128px !important;
   width: auto !important;
   max-height: none !important;
   max-width: none !important;
@@ -137,7 +137,7 @@ body, html {
 }
 
 .footer-logo {
-  height: 96px !important;
+  height: 108px !important;
   width: auto !important;
   max-height: none !important;
   max-width: none !important;
@@ -146,11 +146,10 @@ body, html {
 
 @media screen and (max-width: 767px) {
   .navbar-logo-image {
-    height: 88px !important;
+    height: 96px !important;
   }
 
   .footer-logo {
-    height: 80px !important;
+    height: 88px !important;
   }
 }
-
