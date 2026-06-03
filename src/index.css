@@ -60,11 +60,131 @@ body, html {
   width: 100% !important;
 }
 
+/* ─── Services Section: Larger Typography ───────────────────────────────────
+   All rules scoped to .section.hero-service — zero effect on any other section
+   ────────────────────────────────────────────────────────────────────────── */
+.section.hero-service .section-sub-title {
+  font-size: 15px !important;
+  padding: 9px 20px !important;
+  letter-spacing: 1px !important;
+}
 
+.section.hero-service .hero-service-title {
+  font-size: clamp(36px, 4.5vw, 62px) !important;
+  line-height: 1.15 !important;
+  max-width: 100% !important;
+  font-family: 'Old Standard TT', serif !important;
+}
+
+.section.hero-service .hero-servoce-content {
+  font-size: clamp(17px, 1.6vw, 22px) !important;
+  line-height: 1.65 !important;
+  max-width: 760px !important;
+  margin: 0 auto !important;
+  color: #333 !important;
+}
+
+.section.hero-service .hero-service-name {
+  font-size: clamp(22px, 2.8vw, 38px) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.5px !important;
+}
+
+.section.hero-service .hero-service-card-name {
+  font-size: clamp(15px, 1.4vw, 20px) !important;
+  letter-spacing: 2px !important;
+  opacity: 0.85 !important;
+}
+
+.section.hero-service .primary-button-text,
+.section.hero-service .primary-button-hover-text {
+  font-size: 16px !important;
+  letter-spacing: 0.5px !important;
+}
 
 .section.hero {
   min-height: 100vh !important;
   box-sizing: border-box !important;
+  background-image: none !important; /* video handles the background */
+}
+
+/* ─── Brand Ticker: Edge-to-Edge Infinite Loop ───────────────────────────── */
+.brand-ticker-section {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  overflow: hidden !important;
+  width: 100vw !important;
+  position: relative !important;
+  left: 50% !important;
+  right: 50% !important;
+  margin-left: -50vw !important;
+  margin-right: -50vw !important;
+}
+
+/* Fade masks on left & right edges */
+.brand-ticker-section::before,
+.brand-ticker-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  z-index: 2;
+  pointer-events: none;
+}
+.brand-ticker-section::before {
+  left: 0;
+  background: linear-gradient(to right, #f5f5f5 0%, transparent 100%);
+}
+.brand-ticker-section::after {
+  right: 0;
+  background: linear-gradient(to left, #f5f5f5 0%, transparent 100%);
+}
+
+/* The scrolling track — two sets side by side */
+.brand-ticker-track {
+  display: flex;
+  width: max-content;
+  animation: brand-scroll 28s linear infinite;
+}
+
+.brand-ticker-track:hover {
+  animation-play-state: paused;
+}
+
+/* One complete set of logos */
+.brand-ticker-set {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  padding: 0 30px;
+  flex-shrink: 0;
+}
+
+.brand-ticker-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.brand-ticker-item .brand-logo {
+  height: 36px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+  filter: grayscale(1) opacity(0.55);
+  transition: filter 0.3s ease;
+}
+
+.brand-ticker-item .brand-logo:hover {
+  filter: grayscale(0) opacity(1);
+}
+
+/* Infinite scroll keyframes — scrolls exactly one full set width */
+@keyframes brand-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 .animation-content {
