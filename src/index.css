@@ -18,6 +18,13 @@ body, html {
   padding-right: 5% !important;
 }
 
+/* Force all section inner wraps to be full-width / edge-to-edge */
+.hero-about-wrap {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+
 .section.hero {
   min-height: 100vh !important;
   box-sizing: border-box !important;
@@ -128,7 +135,7 @@ body, html {
 
 /* Logo image rendering — inverts the dark outlines to white for dark navbar */
 .navbar-logo-image {
-  height: 128px !important;
+  height: 150px !important;
   width: auto !important;
   max-height: none !important;
   max-width: none !important;
@@ -153,3 +160,198 @@ body, html {
     height: 88px !important;
   }
 }
+
+/* Storyline grid and cards styling */
+.storyline-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.storyline-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 35px 30px;
+  position: relative;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.storyline-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+.storyline-badge {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  background: #111111;
+  padding: 4px 12px;
+  border-radius: 20px;
+  display: inline-block;
+  align-self: flex-start;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.storyline-card-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #111111;
+  margin: 0 0 15px 0;
+  line-height: 1.3;
+}
+
+.storyline-card-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: #555555;
+  line-height: 1.6;
+  margin: 0 0 25px 0;
+  flex-grow: 1;
+}
+
+.storyline-visual-hint {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #999999;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding-top: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.storyline-visual-hint .visual-icon {
+  font-size: 16px;
+}
+
+/* Motion Graphic Section */
+.motion-graphic-sec {
+  background: linear-gradient(135deg, #090909 0%, #151515 100%);
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.motion-graphic-sec::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.motion-graphic-wrap {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  padding: 0 5%;
+  box-sizing: border-box;
+}
+
+.motion-graphic-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  display: inline-block;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 6px 16px;
+  border-radius: 30px;
+}
+
+.motion-graphic-text-1 {
+  font-family: 'Old Standard TT', serif;
+  font-size: 32px;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 10px;
+}
+
+.motion-graphic-text-2 {
+  font-family: 'Old Standard TT', serif;
+  font-size: 54px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+/* Call to Action Section */
+.cta-sec {
+  background: #fbfbfb;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 80px 0;
+  text-align: center;
+}
+
+.cta-wrap {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 0 5%;
+  box-sizing: border-box;
+}
+
+.cta-title {
+  font-family: 'Old Standard TT', serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #111111;
+  line-height: 1.3;
+  margin: 0;
+}
+
+/* Responsive Overrides */
+@media screen and (max-width: 991px) {
+  .storyline-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .motion-graphic-text-2 {
+    font-size: 42px;
+  }
+  .cta-title {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .storyline-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .motion-graphic-text-2 {
+    font-size: 32px;
+  }
+  .cta-title {
+    font-size: 26px;
+  }
+}
+
