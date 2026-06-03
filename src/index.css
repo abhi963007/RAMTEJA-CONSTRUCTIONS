@@ -74,6 +74,8 @@ body, html {
   line-height: 1.15 !important;
   max-width: 100% !important;
   font-family: 'Old Standard TT', serif !important;
+  opacity: 1 !important;
+  transform: none !important;
 }
 
 .section.hero-service .hero-servoce-content {
