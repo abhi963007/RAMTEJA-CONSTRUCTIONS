@@ -7,7 +7,7 @@ export default function Navbar() {
       <div className="auto-container w-container">
         <div className="navbar-content">
           <Link to="/" className="navbar-logo-link w-nav-brand">
-            <span className="navbar-logo-text">RAMTEJA CONSTRUCTIONS</span>
+            <img loading="lazy" src="/images/logo.png" alt="Ramteja Constructions Logo" className="navbar-logo-image" />
           </Link>
           
           <nav role="navigation" className="nave-menu w-nav-menu">

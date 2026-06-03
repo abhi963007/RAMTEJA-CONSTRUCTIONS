@@ -24,7 +24,7 @@ export default function Footer() {
           <div className="footer-main-box-wrap">
             <div data-w-id="564f99af-077a-9408-a510-71268355b58b" className="footer-about-box">
               <Link to="/" className="footer-logo-box w-inline-block">
-                <span className="footer-logo-text">RAMTEJA CONSTRUCTIONS</span>
+                <img loading="lazy" src="/images/logo.png" alt="Ramteja Constructions Logo" className="footer-logo" />
               </Link>
               <p className="footer-about">Delivering high-quality roofing solutions with strength, style, and reliability. We combine expert craftsmanship and premium materials to protect your home while enhancing its look.</p>
               <div className="social-box-wrap">
