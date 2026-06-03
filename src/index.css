@@ -500,6 +500,24 @@ body, html {
   margin: 0;
 }
 
+/* Footer Layout Overrides */
+.footer-main-box-wrap {
+  margin-top: 60px !important; /* Reduce huge gap from giant spacing variable */
+  align-items: flex-start !important;
+}
+
+.footer-menu-wraps {
+  grid-column-gap: 40px !important;
+  width: 100% !important;
+  max-width: 650px !important;
+}
+
+.footer-menu-wrap {
+  grid-template-columns: repeat(3, 1fr) !important;
+  max-width: 100% !important;
+  grid-column-gap: 40px !important;
+}
+
 /* Responsive Overrides */
 @media screen and (max-width: 991px) {
   .storyline-grid {
