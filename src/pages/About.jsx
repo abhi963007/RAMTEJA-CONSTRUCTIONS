@@ -2,6 +2,13 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Faq from '../components/Faq';
 
+const brands = [
+  '/images/client-logo-1.png',
+  '/images/client-logo-2.png',
+  '/images/client-logo-3.png',
+  '/images/client-logo-4.png',
+];
+
 export default function About() {
   const [activeTab, setActiveTab] = useState('Tab 2');
 
@@ -96,66 +103,15 @@ export default function About() {
           <div data-w-id="24c66f18-04a3-6af1-7e61-cf3a883076ef" style={{ opacity: 0 }} className="brand-wrap">
             <div className="ticker">
               <div data-w-id="55dc41e8-d613-d8a7-c616-db38d772b59b" className="ticker-wrapper">
-                <div className="ticker-item-wrap">
-                  <div className="brand-single-card">
-                    <img loading="lazy" src="/images/69a2843d32e20b70ee3b6795_brand-1.svg" alt="" className="brand-logo" />
+                {[0, 1, 2].map((idx) => (
+                  <div className="ticker-item-wrap" key={idx}>
+                    {brands.map((logo, i) => (
+                      <div className="brand-single-card" key={i}>
+                        <img loading="lazy" src={logo} alt="" className="brand-logo" />
+                      </div>
+                    ))}
                   </div>
-                  <div className="brand-single-card">
-                    <img loading="lazy" src="/images/69a2843d4d7cf49613462d43_brand-2.svg" alt="" className="brand-logo" />
-                  </div>
-                  <div className="brand-single-card">
-                    <img loading="lazy" src="/images/69a2843d7d228932ca57f0d1_brand-3.svg" alt="" className="brand-logo" />
-                  </div>
-                  <div className="brand-single-card">
-                    <img loading="lazy" src="/images/69a2843d1a9224ce1920e73e_brand-4.svg" alt="" className="brand-logo" />
-                  </div>
-                  <div className="brand-single-card">
-                    <img loading="lazy" src="/images/69a2843e7605edb1b932fc56_brand-5.svg" alt="" className="brand-logo" />
-                  </div>
-                  <div className="brand-single-card">
-                    <img loading="lazy" src="/images/69a2843fb0ebeeac64fa1eec_brand-6.svg" alt="" className="brand-logo" />
-                  </div>
-                </div>
-                <div className="ticker-item-wrap">
-                  <div className="brand-single-card">
-                    <img loading="lazy" src="/images/69a2843d32e20b70ee3b6795_brand-1.svg" alt="" className="brand-logo" />
-                  </div>
-                  <div className="brand-single-card">
-                    <img loading="lazy" src="/images/69a2843d4d7cf49613462d43_brand-2.svg" alt="" className="brand-logo" />
-                  </div>
-                  <div className="brand-single-card">
-                    <img loading="lazy" src="/images/69a2843d7d228932ca57f0d1_brand-3.svg" alt="" className="brand-logo" />
-                  </div>
-                  <div className="brand-single-card">
-                    <img loading="lazy" src="/images/69a2843d1a9224ce1920e73e_brand-4.svg" alt="" className="brand-logo" />
-                  </div>
-                  <div className="brand-single-card">
-                    <img loading="lazy" src="/images/69a2843e7605edb1b932fc56_brand-5.svg" alt="" className="brand-logo" />
-                  </div>
-                  <div className="brand-single-card">
-                    <img loading="lazy" src="/images/69a2843fb0ebeeac64fa1eec_brand-6.svg" alt="" className="brand-logo" />
-                  </div>
-                </div>
-                <div className="ticker-item-wrap">
-                  <div className="brand-single-card">
-                    <img loading="lazy" src="/images/69a2843d32e20b70ee3b6795_brand-1.svg" alt="" className="brand-logo" />
-                  </div>
-                  <div className="brand-single-card">
-                    <img loading="lazy" src="/images/69a2843d4d7cf49613462d43_brand-2.svg" alt="" className="brand-logo" />
-                  </div>
-                  <div className="brand-single-card">
-                    <img loading="lazy" src="/images/69a2843d7d228932ca57f0d1_brand-3.svg" alt="" className="brand-logo" />
-                  </div>
-                  <div className="brand-single-card">
-                    <img loading="lazy" src="/images/69a2843d1a9224ce1920e73e_brand-4.svg" alt="" className="brand-logo" />
-                  </div>
-                  <div className="brand-single-card">
-                    <img loading="lazy" src="/images/69a2843e7605edb1b932fc56_brand-5.svg" alt="" className="brand-logo" />
-                  </div>
-                  <div className="brand-single-card">
-                    <img loading="lazy" src="/images/69a2843fb0ebeeac64fa1eec_brand-6.svg" alt="" className="brand-logo" />
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
             <div className="brand-button-box">

@@ -1,12 +1,10 @@
 import React from 'react';
 
 const brands = [
-  '/images/69a2843d32e20b70ee3b6795_brand-1.svg',
-  '/images/69a2843d4d7cf49613462d43_brand-2.svg',
-  '/images/69a2843d7d228932ca57f0d1_brand-3.svg',
-  '/images/69a2843d1a9224ce1920e73e_brand-4.svg',
-  '/images/69a2843e7605edb1b932fc56_brand-5.svg',
-  '/images/69a2843fb0ebeeac64fa1eec_brand-6.svg',
+  '/images/client-logo-1.png',
+  '/images/client-logo-2.png',
+  '/images/client-logo-3.png',
+  '/images/client-logo-4.png',
 ];
 
 export default function BrandTicker() {

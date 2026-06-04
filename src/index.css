@@ -206,17 +206,18 @@ body, html {
   flex-shrink: 0;
 }
 
-.brand-ticker-item .brand-logo {
-  height: 36px;
-  width: auto;
-  max-width: 160px;
-  object-fit: contain;
-  filter: grayscale(1) opacity(0.55);
-  transition: filter 0.3s ease;
+.brand-logo {
+  height: 120px !important;
+  width: auto !important;
+  max-width: 380px !important;
+  object-fit: contain !important;
+  filter: grayscale(1) opacity(0.55) !important;
+  transition: all 0.3s ease !important;
 }
 
-.brand-ticker-item .brand-logo:hover {
-  filter: grayscale(0) opacity(1);
+.brand-logo:hover {
+  filter: grayscale(0) opacity(1) !important;
+  transform: scale(1.05);
 }
 
 /* Infinite scroll keyframes — scrolls exactly one full set width */
