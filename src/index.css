@@ -350,6 +350,10 @@ body, html {
   opacity: 0.85 !important;
 }
 
+.secondary-button:hover .button-arrow {
+  transform: translateX(3px) !important;
+}
+
 /* ─── Brand Ticker: Edge-to-Edge Infinite Loop ───────────────────────────── */
 .brand-ticker-section {
   padding-left: 0 !important;

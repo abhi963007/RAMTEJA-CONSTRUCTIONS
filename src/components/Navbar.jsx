@@ -99,11 +99,14 @@ export default function Navbar() {
                     onClick={(e) => { e.preventDefault(); navigate('/contact'); }}
                     className="secondary-button w-inline-block"
                   >
-                    <div className="secondary-button-content">
+                    <div className="secondary-button-content" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <div className="secondary-button-text-wrap">
                         <div className="secondary-button-text">Get in Touch</div>
                         <div className="secondary-button-hover-text">Get in Touch</div>
                       </div>
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style={{ flexShrink: 0, transition: 'transform 0.3s ease' }} className="button-arrow">
+                        <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
                     </div>
                   </Link>
                 </div>
