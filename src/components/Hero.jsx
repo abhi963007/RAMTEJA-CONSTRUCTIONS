@@ -1,83 +1,28 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 export default function Hero() {
   const navigate = useNavigate();
-  const playerRef = useRef(null);
-
-  useEffect(() => {
-    // Check if the script is already present
-    let tag = document.getElementById('youtube-iframe-api');
-    if (!tag) {
-      tag = document.createElement('script');
-      tag.id = 'youtube-iframe-api';
-      tag.src = 'https://www.youtube.com/iframe_api';
-      const firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-    }
-
-    const initPlayer = () => {
-      if (window.YT && window.YT.Player && !playerRef.current) {
-        playerRef.current = new window.YT.Player('hero-youtube-player', {
-          videoId: 'LJ0zferSLP8',
-          playerVars: {
-            autoplay: 1,
-            mute: 1,
-            controls: 0,
-            start: 47,
-            end: 60,
-            loop: 1,
-            playlist: 'LJ0zferSLP8',
-            playsinline: 1,
-            showinfo: 0,
-            rel: 0,
-            modestbranding: 1,
-            fs: 0,
-            iv_load_policy: 3,
-            disablekb: 1,
-            autohide: 1,
-          },
-          events: {
-            onReady: (event) => {
-              event.target.mute();
-              event.target.playVideo();
-            },
-            onStateChange: (event) => {
-              // Loop back to 47 seconds when the video reaches end (60s) or ends
-              if (event.data === window.YT.PlayerState.ENDED) {
-                event.target.seekTo(47);
-                event.target.playVideo();
-              }
-            },
-          },
-        });
-      }
-    };
-
-    if (window.YT && window.YT.Player) {
-      initPlayer();
-    } else {
-      const prevCallback = window.onYouTubeIframeAPIReady;
-      window.onYouTubeIframeAPIReady = () => {
-        if (prevCallback) prevCallback();
-        initPlayer();
-      };
-    }
-
-    return () => {
-      if (playerRef.current && playerRef.current.destroy) {
-        playerRef.current.destroy();
-        playerRef.current = null;
-      }
-    };
-  }, []);
-
   return (
     <section className="section hero" style={{ position: 'relative', overflow: 'hidden' }}>
-      {/* Background YouTube Video */}
-      <div className="hero-youtube-container">
-        <div id="hero-youtube-player"></div>
-      </div>
+      {/* Background Video */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        style={{
+          position: 'absolute',
+          inset: 0,
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          zIndex: 0,
+          pointerEvents: 'none',
+        }}
+      >
+        <source src="/hero.mp4" type="video/mp4" />
+      </video>
 
       {/* Dark overlay */}
       <div style={{

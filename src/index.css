@@ -334,11 +334,11 @@ body, html {
 
 .navbar-logo-text {
   font-family: 'Manrope', sans-serif !important;
-  font-size: 19px !important;
+  font-size: 21px !important;
   font-weight: 800 !important;
-  letter-spacing: 1.2px !important;
+  letter-spacing: -0.2px !important;
   color: #ffffff !important;
-  text-transform: uppercase !important;
+  text-transform: none !important;
   background: linear-gradient(135deg, #ffffff 0%, #dcdcdc 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;

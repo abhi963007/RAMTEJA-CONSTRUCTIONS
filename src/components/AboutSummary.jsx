@@ -7,6 +7,17 @@ export default function AboutSummary() {
   const [isPlaying, setIsPlaying] = useState(true);
   const [progress, setProgress] = useState(0);
   const progressIntervalRef = useRef(null);
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.play().catch(() => {});
+      } else {
+        videoRef.current.pause();
+      }
+    }
+  }, [isPlaying, activeStep]);
 
   const steps = [
     {
@@ -91,8 +102,15 @@ export default function AboutSummary() {
           
           {/* Left Column: Visual Screen Side */}
           <div className="storyboard-screen-side">
-            <div className="storyboard-display-screen">
-              {/* Blank screen space reserved for future client video integration */}
+            <div className="storyboard-display-screen" style={{ background: '#000', position: 'relative', overflow: 'hidden' }}>
+              <video
+                ref={videoRef}
+                src={activeStep === 0 ? '/media/about_delay.mp4' : activeStep === 1 ? '/media/about_precision.mp4' : '/media/about_speed.mp4'}
+                muted
+                loop
+                playsInline
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+              />
             </div>
             
             {/* Screen timeline controls */}

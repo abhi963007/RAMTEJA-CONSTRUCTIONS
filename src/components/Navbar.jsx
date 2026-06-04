@@ -34,7 +34,7 @@ export default function Navbar() {
         <div className="navbar-content">
           {/* Logo Text */}
           <Link to="/" className="navbar-logo-link w-nav-brand" onClick={closeMenu} style={{ textDecoration: 'none' }}>
-            <span className="navbar-logo-text">logo</span>
+            <span className="navbar-logo-text">Ramteja Constructions</span>
           </Link>
 
           {/* ─── Desktop navigation (Webflow-managed, untouched) ─── */}
@@ -213,7 +213,7 @@ export default function Navbar() {
         {/* Drawer header */}
         <div className="mobile-menu-header">
           <Link to="/" onClick={closeMenu} className="mobile-menu-logo" style={{ textDecoration: 'none' }}>
-            <span className="navbar-logo-text" style={{ fontSize: '18px' }}>logo</span>
+            <span className="navbar-logo-text" style={{ fontSize: '18px' }}>Ramteja Constructions</span>
           </Link>
           <button
             className="mobile-menu-close"

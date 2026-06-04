@@ -17,7 +17,7 @@ export default function ServicesSummary() {
             <div className="hero-service-single-card one">
               <div className="hero-service-image-box-wrap">
                 <div className="hero-service-image-box">
-                  <img src="/images/69c8da06c7c47b666b3362e4_Roof Installation Work 1.jpg" loading="lazy" alt="Residential Development" className="hero-service-image" />
+                  <img src="/media/residential.png" loading="lazy" alt="Residential Development" className="hero-service-image" />
                   <div className="image-overlay"></div>
                 </div>
                 <div className="hero-servoce-overly-wrap">
@@ -40,7 +40,7 @@ export default function ServicesSummary() {
             <div className="hero-service-single-card two">
               <div className="hero-service-image-box-wrap">
                 <div className="hero-service-image-box">
-                  <img src="/images/69c8da0696fb07bb9b0f4056_Roof Maintenance Scene 1.jpg" loading="lazy" alt="Commercial Development" className="hero-service-image" />
+                  <img src="/media/commercial.png" loading="lazy" alt="Commercial Development" className="hero-service-image" />
                   <div className="image-overlay"></div>
                 </div>
                 <div className="hero-servoce-overly-wrap">
@@ -63,7 +63,7 @@ export default function ServicesSummary() {
             <div className="hero-service-single-card three">
               <div className="hero-service-image-box-wrap">
                 <div className="hero-service-image-box">
-                  <img src="/images/69c8da07143f526da3152aaa_Roof Installation Scene (2) 1.jpg" loading="lazy" alt="Turnkey Handover" className="hero-service-image" />
+                  <img src="/media/turnkey.png" loading="lazy" alt="Turnkey Handover" className="hero-service-image" />
                   <div className="image-overlay"></div>
                 </div>
                 <div className="hero-servoce-overly-wrap">

@@ -10,7 +10,7 @@ export default function Footer() {
             {/* Left Column: Logo and Social Links */}
             <div className="footer-left-side">
               <Link to="/" className="footer-logo-box w-inline-block" style={{ textDecoration: 'none' }}>
-                <span className="navbar-logo-text" style={{ fontSize: '18px' }}>logo</span>
+                <span className="navbar-logo-text" style={{ fontSize: '18px' }}>Ramteja Constructions</span>
               </Link>
               <div className="footer-social-wrap">
                 <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="Instagram">
