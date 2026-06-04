@@ -571,7 +571,7 @@ body, html {
 /* ─── Interactive Storyboard Player ─────────────────────────────────────── */
 .storyboard-player-container {
   display: grid;
-  grid-template-columns: 1.9fr 1.1fr;
+  grid-template-columns: 1.5fr 1fr;
   gap: 60px;
   margin-top: 50px;
   margin-bottom: 20px;
@@ -720,7 +720,7 @@ body, html {
   gap: 20px;
   background: rgba(15, 15, 18, 0.7) !important;
   padding: 16px 24px !important;
-  border-radius: 12px !important;
+  border-radius: 100px !important;
   border: 1px solid rgba(255, 255, 255, 0.05) !important;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4) !important;
   backdrop-filter: blur(12px) !important;
