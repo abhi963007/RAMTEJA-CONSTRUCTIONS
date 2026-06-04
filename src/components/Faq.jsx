@@ -39,12 +39,12 @@ export default function Faq() {
       <div className="container">
         <div className="faq-wrapper">
           <div className="faq-left-box">
-            <div data-w-id="14e6d451-d83e-3d79-a65e-4184cd64e2ec" className="faq-sub-title" style={{ opacity: 1 }}>FAQs</div>
-            <div data-w-id="14e6d451-d83e-3d79-a65e-4184cd64e2ee" className="inner-title-box faq" style={{ opacity: 1 }}>
+            <div data-w-id="14e6d451-d83e-3d79-a65e-4184cd64e2ec" className="faq-sub-title">FAQs</div>
+            <div data-w-id="14e6d451-d83e-3d79-a65e-4184cd64e2ee" className="inner-title-box faq">
               <h3 className="inner-title white">Clear answers you can trust — find what you need about your construction project.</h3>
             </div>
           </div>
-          <div data-w-id="14e6d451-d83e-3d79-a65e-4184cd64e2f1" className="faq-right-box" style={{ opacity: 1 }}>
+          <div data-w-id="14e6d451-d83e-3d79-a65e-4184cd64e2f1" className="faq-right-box">
             {faqs.map((faq, index) => {
               const isOpen = openIndex === index;
               return (

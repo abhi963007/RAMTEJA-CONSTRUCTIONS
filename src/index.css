@@ -225,13 +225,6 @@ body, html {
   100% { transform: translateX(-50%); }
 }
 
-.animation-content {
-  opacity: 1 !important;
-  transform: none !important;
-  -webkit-transform: none !important;
-  -moz-transform: none !important;
-  -ms-transform: none !important;
-}
 
 @media screen and (min-width: 992px) {
   .nave-menu {

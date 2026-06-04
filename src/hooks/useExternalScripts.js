@@ -74,6 +74,13 @@ export function useExternalScripts() {
         if (window.Webflow.require('ix2')) {
           window.Webflow.require('ix2').init();
         }
+        
+        // Dispatch lifecycle and scroll events to trigger Webflow page load & viewport animations
+        document.dispatchEvent(new Event('DOMContentLoaded'));
+        document.dispatchEvent(new Event('readystatechange'));
+        window.dispatchEvent(new Event('load'));
+        window.dispatchEvent(new Event('scroll'));
+
         // Force refresh ScrollTrigger
         if (window.ScrollTrigger) {
           window.ScrollTrigger.refresh();

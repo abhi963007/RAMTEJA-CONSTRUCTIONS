@@ -3,12 +3,9 @@ import React, { useState } from 'react';
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
-    company: '',
-    designation: '',
     email: '',
-    phone: '',
-    location: '',
-    landArea: '',
+    propertyType: '',
+    serviceNeeded: '',
     message: ''
   });
   const [submitted, setSubmitted] = useState(false);
@@ -23,144 +20,116 @@ export default function Contact() {
   };
 
   return (
-    <div className="inner-page-content" style={{ padding: '120px 0 80px', backgroundColor: '#0f0f0f', color: '#fff' }}>
-      <div className="container" style={{ maxWidth: '800px' }}>
-        
-        {/* Intro */}
-        <div style={{ marginBottom: '50px', textAlign: 'center' }}>
-          <div className="section-sub-title">Contact</div>
-          <h1 style={{ fontSize: '2.5rem', marginBottom: '15px' }}>Planning at Scale Starts Here</h1>
-          <p style={{ color: '#aaa', lineHeight: '1.6', fontSize: '1.1rem' }}>
-            RamTeja Constructions partners with developers, landowners, and institutions to execute high-rise and large-scale EPC developments with precision, speed, and reliability.
-          </p>
-        </div>
-
-        {/* Contact Form */}
-        <div style={{ backgroundColor: '#161616', padding: '40px', borderRadius: '12px', border: '1px solid #222' }}>
-          {submitted ? (
-            <div style={{ textAlign: 'center', padding: '40px 0' }}>
-              <h3 style={{ color: '#8cd462', fontSize: '1.75rem', marginBottom: '15px' }}>Message Sent Successfully!</h3>
-              <p style={{ color: '#aaa' }}>Thank you for reaching out. A representative from RamTeja Constructions will contact you shortly.</p>
-              <button 
-                onClick={() => setSubmitted(false)} 
-                className="secondary-button" 
-                style={{ marginTop: '20px', cursor: 'pointer' }}
-              >
-                Send Another Message
-              </button>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-              
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-                <div>
-                  <label style={{ display: 'block', marginBottom: '8px', color: '#aaa', fontSize: '0.9rem' }}>Full Name *</label>
-                  <input 
-                    type="text" 
-                    name="name" 
-                    required 
-                    value={formData.name} 
-                    onChange={handleChange} 
-                    style={{ width: '100%', padding: '12px', backgroundColor: '#222', border: '1px solid #333', borderRadius: '6px', color: '#fff' }} 
-                  />
-                </div>
-                <div>
-                  <label style={{ display: 'block', marginBottom: '8px', color: '#aaa', fontSize: '0.9rem' }}>Company *</label>
-                  <input 
-                    type="text" 
-                    name="company" 
-                    required 
-                    value={formData.company} 
-                    onChange={handleChange} 
-                    style={{ width: '100%', padding: '12px', backgroundColor: '#222', border: '1px solid #333', borderRadius: '6px', color: '#fff' }} 
-                  />
-                </div>
-              </div>
-
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-                <div>
-                  <label style={{ display: 'block', marginBottom: '8px', color: '#aaa', fontSize: '0.9rem' }}>Designation</label>
-                  <input 
-                    type="text" 
-                    name="designation" 
-                    value={formData.designation} 
-                    onChange={handleChange} 
-                    style={{ width: '100%', padding: '12px', backgroundColor: '#222', border: '1px solid #333', borderRadius: '6px', color: '#fff' }} 
-                  />
-                </div>
-                <div>
-                  <label style={{ display: 'block', marginBottom: '8px', color: '#aaa', fontSize: '0.9rem' }}>Email Address *</label>
-                  <input 
-                    type="email" 
-                    name="email" 
-                    required 
-                    value={formData.email} 
-                    onChange={handleChange} 
-                    style={{ width: '100%', padding: '12px', backgroundColor: '#222', border: '1px solid #333', borderRadius: '6px', color: '#fff' }} 
-                  />
-                </div>
-              </div>
-
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-                <div>
-                  <label style={{ display: 'block', marginBottom: '8px', color: '#aaa', fontSize: '0.9rem' }}>Phone Number *</label>
-                  <input 
-                    type="tel" 
-                    name="phone" 
-                    required 
-                    value={formData.phone} 
-                    onChange={handleChange} 
-                    style={{ width: '100%', padding: '12px', backgroundColor: '#222', border: '1px solid #333', borderRadius: '6px', color: '#fff' }} 
-                  />
-                </div>
-                <div>
-                  <label style={{ display: 'block', marginBottom: '8px', color: '#aaa', fontSize: '0.9rem' }}>Project Location</label>
-                  <input 
-                    type="text" 
-                    name="location" 
-                    value={formData.location} 
-                    onChange={handleChange} 
-                    style={{ width: '100%', padding: '12px', backgroundColor: '#222', border: '1px solid #333', borderRadius: '6px', color: '#fff' }} 
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label style={{ display: 'block', marginBottom: '8px', color: '#aaa', fontSize: '0.9rem' }}>Estimated Land Area (Sq. Ft. / Acres)</label>
-                <input 
-                  type="text" 
-                  name="landArea" 
-                  value={formData.landArea} 
-                  onChange={handleChange} 
-                  style={{ width: '100%', padding: '12px', backgroundColor: '#222', border: '1px solid #333', borderRadius: '6px', color: '#fff' }} 
-                />
-              </div>
-
-              <div>
-                <label style={{ display: 'block', marginBottom: '8px', color: '#aaa', fontSize: '0.9rem' }}>Message / Project Description</label>
-                <textarea 
-                  name="message" 
-                  rows="4" 
-                  value={formData.message} 
-                  onChange={handleChange} 
-                  style={{ width: '100%', padding: '12px', backgroundColor: '#222', border: '1px solid #333', borderRadius: '6px', color: '#fff', resize: 'vertical' }} 
-                />
-              </div>
-
-              <div style={{ marginTop: '10px' }}>
-                <button type="submit" className="primary-button" style={{ width: '100%', cursor: 'pointer', border: 'none' }}>
-                  <div className="primary-button-text-wrap">
-                    <div className="primary-button-text">Submit Request</div>
-                    <div className="primary-button-hover-text">Submit Request</div>
+    <>
+      <section className="section inner-hero">
+        <div className="w-layout-blockcontainer container w-container">
+          <div className="inner-hero-wrap">
+            <div className="inner-content-box">
+              <div data-w-id="c3b8cf2f-a21f-7d0e-e126-1f569cf7724b" className="animation-content-wrap">
+                <div style={{
+                  WebkitTransform: 'translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 5deg)',
+                  MozTransform: 'translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 5deg)',
+                  msTransform: 'translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 5deg)',
+                  transform: 'translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 5deg)',
+                  opacity: 0
+                }} className="animation-content">
+                  <div className="utlity-center-box contact">
+                    <h1 className="style-guide-inner-title">Let’s Discuss Your Construction Needs</h1>
+                    <div className="inner-hero-description-box contact">
+                      <div className="secondary-text center">We provide construction estimates, project guidance, support services, and partnership opportunities tailored to your needs.</div>
+                    </div>
                   </div>
-                </button>
+                </div>
               </div>
-
-            </form>
-          )}
+            </div>
+          </div>
         </div>
+      </section>
 
-      </div>
-    </div>
+      <section className="section contact">
+        <div className="container">
+          <div className="contact-form w-form">
+            {!submitted ? (
+              <form id="email-form" name="email-form" data-name="Email Form" onSubmit={handleSubmit} className="contact-from-wrap" data-wf-page-id="6992bba8cdc518727404d3d9" data-wf-element-id="f23e304c-1f7e-0e78-8c7d-ba5a28e4fd41">
+                <div className="single-field-wrap">
+                  <div className="single-field-box">
+                    <label htmlFor="name">Your full name</label>
+                    <input className="field w-input" maxLength={256} name="name" data-name="Name" placeholder="Name" type="text" id="name" required value={formData.name} onChange={handleChange} />
+                  </div>
+                  <div className="single-field-box">
+                    <label htmlFor="Email">Email address</label>
+                    <input className="field w-input" maxLength={256} name="email" data-name="Email" placeholder="Email" type="email" id="Email" required value={formData.email} onChange={handleChange} />
+                  </div>
+                </div>
+                <div className="single-field-wrap _2nd">
+                  <div className="single-field-box">
+                    <label htmlFor="commercial">Type of Property</label>
+                    <input className="field w-input" maxLength={256} name="propertyType" data-name="PropertyType" placeholder="Residential / Commercial" type="text" id="commercial" required value={formData.propertyType} onChange={handleChange} />
+                  </div>
+                  <div className="single-field-box">
+                    <label htmlFor="Replacement">Service Needed</label>
+                    <input className="field w-input" maxLength={256} name="serviceNeeded" data-name="ServiceNeeded" placeholder="New Build / Renovation / Turnkey EPC" type="text" id="Replacement" required value={formData.serviceNeeded} onChange={handleChange} />
+                  </div>
+                </div>
+                <div className="single-field-box">
+                  <label htmlFor="field">Message / Project Description</label>
+                  <textarea required placeholder="Type here" maxLength={5000} id="field" name="message" data-name="Field" className="text-areea w-input" value={formData.message} onChange={handleChange}></textarea>
+                </div>
+                <input type="submit" data-wait="Please wait..." data-w-id="f23e304c-1f7e-0e78-8c7d-ba5a28e4fd48" style={{ opacity: 0 }} className="contact-submit-button w-button" value="Submit" />
+              </form>
+            ) : null}
+
+            <div className="success-message w-form-done" style={{ display: submitted ? 'block' : 'none' }}>
+              <div>Thank you! Your submission has been received!</div>
+            </div>
+
+            <div className="error-message w-form-fail" style={{ display: 'none' }}>
+              <div>Oops! Something went wrong while submitting the form.</div>
+            </div>
+          </div>
+
+          <div className="w-layout-grid contact-grid">
+            <div data-w-id="15fba8df-cea5-d203-7e91-afc9331b804e" style={{ opacity: 0 }} className="contact-single-card">
+              <div data-w-id="9bcfab07-2cfe-f2dc-01dd-3521e01068af" style={{ opacity: 0 }} className="contact-single-title-box">
+                <div className="contact-single-icon-box">
+                  <img src="/images/699556873b7558fb60595523_Contact%20Icon%201.svg" loading="lazy" alt="Sales Inquiry Icon" />
+                </div>
+                <div className="contact-single-title">Sales Inquiry</div>
+              </div>
+              <div data-w-id="48a53d83-776e-c1aa-e0ae-3ecbe1fd32da" style={{ opacity: 0 }} className="contact-single-content-box">
+                <div className="secondary-text">Free quote, engineering consultation, or pricing</div>
+                <a href="mailto:sales@ramtejaconstructions.com" className="secondary-text">sales@ramtejaconstructions.com</a>
+              </div>
+            </div>
+
+            <div data-w-id="0a7f4de4-5dfa-44b4-465e-4a7d84d68c47" style={{ opacity: 0 }} className="contact-single-card">
+              <div data-w-id="0a7f4de4-5dfa-44b4-465e-4a7d84d68c48" style={{ opacity: 0 }} className="contact-single-title-box">
+                <div className="contact-single-icon-box">
+                  <img src="/images/69955813062607ebe8a8ec81_Contact%20Icon%202.svg" loading="lazy" alt="Customer Support Icon" />
+                </div>
+                <div className="contact-single-title">Customer Support</div>
+              </div>
+              <div data-w-id="0a7f4de4-5dfa-44b4-465e-4a7d84d68c4d" style={{ opacity: 0 }} className="contact-single-content-box">
+                <div className="secondary-text">Questions on ongoing or completed work</div>
+                <a href="mailto:support@ramtejaconstructions.com" className="secondary-text">support@ramtejaconstructions.com</a>
+              </div>
+            </div>
+
+            <div id="w-node-_6f08fb79-dd45-912f-6abe-bf1e43be2bd5-7404d3d9" data-w-id="6f08fb79-dd45-912f-6abe-bf1e43be2bd5" style={{ opacity: 0 }} className="contact-single-card">
+              <div data-w-id="6f08fb79-dd45-912f-6abe-bf1e43be2bd6" style={{ opacity: 0 }} className="contact-single-title-box">
+                <div className="contact-single-icon-box">
+                  <img src="/images/69955812a7d81d9ef5c854b9_Contact%20Icon%203.svg" loading="lazy" alt="Partnerships Icon" />
+                </div>
+                <div className="contact-single-title">Partnerships</div>
+              </div>
+              <div data-w-id="6f08fb79-dd45-912f-6abe-bf1e43be2bdb" style={{ opacity: 0 }} className="contact-single-content-box">
+                <div className="secondary-text">Suppliers, contractors, collaborations</div>
+                <a href="mailto:partners@ramtejaconstructions.com" className="secondary-text">partners@ramtejaconstructions.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
