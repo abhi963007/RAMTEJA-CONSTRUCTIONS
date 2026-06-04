@@ -40,7 +40,7 @@ export default function AboutSummary() {
       description: "In real estate, one delay becomes many.\nTimelines slip.\nBudgets stretch.\nLiabilities grow.",
       keyPoints: ["Timeline Risk", "Budget Pressure", "Coordination Gaps"],
       superText: "",
-      themeColor: "#ff453a",
+      themeColor: "#5181ed",
       videoSrc: "/media/about_delay.mp4"
     },
     {
@@ -297,7 +297,7 @@ export default function AboutSummary() {
                               {intro}
                             </div>
                             {statements.map((stmt, idx) => (
-                              <div 
+                              <div
                                 key={idx}
                                 style={{
                                   fontSize: 'clamp(24px, 3.2vw, 38px)',
@@ -314,13 +314,13 @@ export default function AboutSummary() {
                                   transform: 'translateY(16px)'
                                 }}
                               >
-                                <span style={{ 
-                                  width: '8px', 
-                                  height: '8px', 
-                                  borderRadius: '50%', 
-                                  backgroundColor: steps[activeStep].themeColor || '#ff453a',
+                                <span style={{
+                                  width: '8px',
+                                  height: '8px',
+                                  borderRadius: '50%',
+                                  backgroundColor: steps[activeStep].themeColor || '#5181ed',
                                   display: 'inline-block',
-                                  boxShadow: `0 0 12px ${steps[activeStep].themeColor || '#ff453a'}`,
+                                  boxShadow: `0 0 12px ${steps[activeStep].themeColor || '#5181ed'}`,
                                   flexShrink: 0
                                 }} />
                                 {stmt}
@@ -328,7 +328,7 @@ export default function AboutSummary() {
                             ))}
                           </>
                         ) : (
-                          <div 
+                          <div
                             style={{
                               fontSize: 'clamp(21px, 2.8vw, 34px)',
                               fontWeight: '800',
@@ -344,10 +344,10 @@ export default function AboutSummary() {
                               transform: 'translateY(16px)'
                             }}
                           >
-                            <span style={{ 
-                              width: '8px', 
-                              height: '8px', 
-                              borderRadius: '50%', 
+                            <span style={{
+                              width: '8px',
+                              height: '8px',
+                              borderRadius: '50%',
                               backgroundColor: steps[activeStep].themeColor || '#b89047',
                               display: 'inline-block',
                               boxShadow: `0 0 12px ${steps[activeStep].themeColor || '#b89047'}`,
@@ -391,7 +391,7 @@ export default function AboutSummary() {
             onClick={(e) => { e.preventDefault(); navigate('/contact'); }}
             className="storyboard-cta-btn"
           >
-            <span>Initiate Partner Consult</span>
+            <span>see our work </span>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ marginLeft: '10px', transition: 'transform 0.3s ease' }}>
               <path d="M3 8H13M9 4L13 8L9 12" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
             </svg>

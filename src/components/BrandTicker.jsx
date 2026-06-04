@@ -10,6 +10,9 @@ const brands = [
 export default function BrandTicker() {
   return (
     <section className="section hero-brand brand-ticker-section">
+      <div className="brand-ticker-label-wrap">
+        <p className="brand-ticker-label">we're proud to partner with best-in-class clients</p>
+      </div>
       <div className="brand-ticker-track scroll-left">
         {[0, 1, 2, 3].map((clone) => (
           <div className="brand-ticker-set" key={clone} aria-hidden={clone > 0 ? 'true' : undefined}>
