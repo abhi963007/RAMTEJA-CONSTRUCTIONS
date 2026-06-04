@@ -332,6 +332,24 @@ body, html {
   padding-bottom: 8px !important;
 }
 
+.navbar-logo-text {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 19px !important;
+  font-weight: 800 !important;
+  letter-spacing: 1.2px !important;
+  color: #ffffff !important;
+  text-transform: uppercase !important;
+  background: linear-gradient(135deg, #ffffff 0%, #dcdcdc 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  transition: all 0.3s ease !important;
+  white-space: nowrap !important;
+}
+
+.navbar-logo-text:hover {
+  opacity: 0.85 !important;
+}
+
 /* ─── Brand Ticker: Edge-to-Edge Infinite Loop ───────────────────────────── */
 .brand-ticker-section {
   padding-left: 0 !important;

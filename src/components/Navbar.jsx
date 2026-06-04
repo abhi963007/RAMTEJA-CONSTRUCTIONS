@@ -32,14 +32,9 @@ export default function Navbar() {
     >
       <div className="auto-container w-container">
         <div className="navbar-content">
-          {/* Logo */}
-          <Link to="/" className="navbar-logo-link w-nav-brand" onClick={closeMenu}>
-            <img
-              loading="lazy"
-              src="/images/logo.png"
-              alt="Ramteja Constructions Logo"
-              className="navbar-logo-image"
-            />
+          {/* Logo Text */}
+          <Link to="/" className="navbar-logo-link w-nav-brand" onClick={closeMenu} style={{ textDecoration: 'none' }}>
+            <span className="navbar-logo-text">logo</span>
           </Link>
 
           {/* ─── Desktop navigation (Webflow-managed, untouched) ─── */}
@@ -106,8 +101,8 @@ export default function Navbar() {
                   >
                     <div className="secondary-button-content">
                       <div className="secondary-button-text-wrap">
-                        <div className="secondary-button-text">Let's Talk</div>
-                        <div className="secondary-button-hover-text">Let's Talk</div>
+                        <div className="secondary-button-text">Get in Touch</div>
+                        <div className="secondary-button-hover-text">Get in Touch</div>
                       </div>
                     </div>
                   </Link>
@@ -214,12 +209,8 @@ export default function Navbar() {
       >
         {/* Drawer header */}
         <div className="mobile-menu-header">
-          <Link to="/" onClick={closeMenu} className="mobile-menu-logo">
-            <img
-              src="/images/logo.png"
-              alt="Ramteja Constructions"
-              loading="lazy"
-            />
+          <Link to="/" onClick={closeMenu} className="mobile-menu-logo" style={{ textDecoration: 'none' }}>
+            <span className="navbar-logo-text" style={{ fontSize: '18px' }}>logo</span>
           </Link>
           <button
             className="mobile-menu-close"
