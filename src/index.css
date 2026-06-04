@@ -38,6 +38,18 @@ body, html {
   box-sizing: border-box !important;
 }
 
+.hero-service-single-card.one {
+  top: 1vh !important; /* Shifted further up from 2vh to maximize viewport clearance */
+}
+
+.hero-service-single-card.two {
+  top: 4vh !important; /* Shifted further up from 6vh to prevent bottom button cutoff */
+}
+
+.hero-service-single-card.three {
+  top: 7vh !important; /* Shifted further up from 10vh */
+}
+
 .hero-service-image-box-wrap {
   width: 100% !important;
   border-radius: 24px !important;
@@ -61,6 +73,8 @@ body, html {
   max-width: 100% !important;
   width: 100% !important;
   box-sizing: border-box !important;
+  margin-top: 10px !important; /* Reduced to pull content upwards */
+  grid-row-gap: 12px !important; /* Reduced from 22px to save vertical space for CTA buttons */
 }
 
 .service-inner-wrap {
