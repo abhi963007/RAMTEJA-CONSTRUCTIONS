@@ -133,7 +133,8 @@ export default function Navbar() {
                 Home
               </NavLink>
               <NavLink
-                to="/about"
+                to="#"
+                onClick={(e) => e.preventDefault()}
                 onMouseEnter={(e) => updatePosition(e.currentTarget)}
                 className={({ isActive }) =>
                   `nav-link _2 white w-nav-link${isActive ? ' w--current' : ''}`
@@ -143,7 +144,8 @@ export default function Navbar() {
                 About
               </NavLink>
               <NavLink
-                to="/services"
+                to="#"
+                onClick={(e) => e.preventDefault()}
                 onMouseEnter={(e) => updatePosition(e.currentTarget)}
                 className={({ isActive }) =>
                   `nav-link _3 white w-nav-link${isActive ? ' w--current' : ''}`
@@ -153,7 +155,8 @@ export default function Navbar() {
                 Services
               </NavLink>
               <NavLink
-                to="/contact"
+                to="#"
+                onClick={(e) => e.preventDefault()}
                 onMouseEnter={(e) => updatePosition(e.currentTarget)}
                 className={({ isActive }) =>
                   `nav-link _4 white w-nav-link${isActive ? ' w--current' : ''}`
@@ -166,7 +169,7 @@ export default function Navbar() {
               <div className="primary-button-wrapper-two mobile">
                 <Link
                   to="#"
-                  onClick={(e) => { e.preventDefault(); navigate('/contact'); }}
+                  onClick={(e) => { e.preventDefault(); }}
                   className="primary-button w-inline-block"
                 >
                   <div className="primary-button-text-wrap">
@@ -186,7 +189,7 @@ export default function Navbar() {
                 <div className="nav-button-wrap desktop">
                   <Link
                     to="#"
-                    onClick={(e) => { e.preventDefault(); navigate('/contact'); }}
+                    onClick={(e) => { e.preventDefault(); }}
                     className="secondary-button w-inline-block"
                   >
                     <div className="secondary-button-content" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -352,8 +355,8 @@ export default function Navbar() {
             Home
           </NavLink>
           <NavLink
-            to="/about"
-            onClick={closeMenu}
+            to="#"
+            onClick={(e) => { e.preventDefault(); closeMenu(); }}
             className={({ isActive }) =>
               `mobile-nav-link${isActive ? ' active' : ''}`
             }
@@ -361,8 +364,8 @@ export default function Navbar() {
             About
           </NavLink>
           <NavLink
-            to="/services"
-            onClick={closeMenu}
+            to="#"
+            onClick={(e) => { e.preventDefault(); closeMenu(); }}
             className={({ isActive }) =>
               `mobile-nav-link${isActive ? ' active' : ''}`
             }
@@ -370,8 +373,8 @@ export default function Navbar() {
             Services
           </NavLink>
           <NavLink
-            to="/contact"
-            onClick={closeMenu}
+            to="#"
+            onClick={(e) => { e.preventDefault(); closeMenu(); }}
             className={({ isActive }) =>
               `mobile-nav-link${isActive ? ' active' : ''}`
             }
