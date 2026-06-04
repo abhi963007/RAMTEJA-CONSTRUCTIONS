@@ -34,11 +34,11 @@ export default function Footer() {
             {/* Right Column: Horizontal Corporate Links */}
             <div className="footer-links-side">
               <div className="footer-links-row">
-                <Link to="/news-room" className="footer-nav-link">News Room</Link>
-                <Link to="/careers" className="footer-nav-link">Careers</Link>
-                <Link to="/privacy-policy" className="footer-nav-link">Privacy Policy</Link>
-                <Link to="/partners" className="footer-nav-link">Partners</Link>
-                <Link to="/cookie-policy" className="footer-nav-link">Cookie Policy</Link>
+                <Link to="#" onClick={(e) => e.preventDefault()} className="footer-nav-link">News Room</Link>
+                <Link to="#" onClick={(e) => e.preventDefault()} className="footer-nav-link">Careers</Link>
+                <Link to="#" onClick={(e) => e.preventDefault()} className="footer-nav-link">Privacy Policy</Link>
+                <Link to="#" onClick={(e) => e.preventDefault()} className="footer-nav-link">Partners</Link>
+                <Link to="#" onClick={(e) => e.preventDefault()} className="footer-nav-link">Cookie Policy</Link>
               </div>
             </div>
           </div>

@@ -13,14 +13,14 @@ export default function Navbar() {
           <nav role="navigation" className="nave-menu w-nav-menu">
             <div className="nav-menu-content display-none">
               <NavLink to="/" className={({ isActive }) => `nav-link _1 white w-nav-link ${isActive ? 'w--current' : ''}`}>Home</NavLink>
-              <NavLink to="/about" className={({ isActive }) => `nav-link _2 white w-nav-link ${isActive ? 'w--current' : ''}`}>About</NavLink>
+              <NavLink to="#" onClick={(e) => e.preventDefault()} className="nav-link _2 white w-nav-link">About</NavLink>
               
 
-              <NavLink to="/service" className={({ isActive }) => `nav-link _3 white w-nav-link ${isActive ? 'w--current' : ''}`}>Services</NavLink>
-              <NavLink to="/contact" className={({ isActive }) => `nav-link _4 white w-nav-link ${isActive ? 'w--current' : ''}`}>Contact</NavLink>
+              <NavLink to="#" onClick={(e) => e.preventDefault()} className="nav-link _3 white w-nav-link">Services</NavLink>
+              <NavLink to="#" onClick={(e) => e.preventDefault()} className="nav-link _4 white w-nav-link">Contact</NavLink>
               
               <div className="primary-button-wrapper-two mobile">
-                <Link to="/contact" data-w-id="0315d2b4-80bd-39b0-4d41-02eb764f6d59" className="primary-button w-inline-block">
+                <Link to="#" onClick={(e) => e.preventDefault()} className="primary-button w-inline-block">
                   <div className="primary-button-text-wrap">
                     <div className="primary-button-text">Start Project</div>
                     <div className="primary-button-hover-text">Start Project</div>
@@ -39,32 +39,32 @@ export default function Navbar() {
                     <div className="nav-link-wrapper fast">
                       <div className="nav-menu-wrap">
                         <Link to="/" className="nav-menu w-nav-link">Home</Link>
-                        <Link to="/about" className="nav-menu w-nav-link">About</Link>
-                        <Link to="/project" className="nav-menu w-nav-link">Projects</Link>
-                        <Link to="/service" className="nav-menu w-nav-link">Services</Link>
-                        <Link to="/blogs" className="nav-menu w-nav-link">Blog</Link>
-                        <Link to="/product-page" className="nav-menu w-nav-link">Product</Link>
-                        <Link to="/pricing" className="nav-menu w-nav-link">Pricing</Link>
-                        <Link to="/contact" className="nav-menu w-nav-link">Contact</Link>
+                        <Link to="#" onClick={(e) => e.preventDefault()} className="nav-menu w-nav-link">About</Link>
+                        <Link to="#" onClick={(e) => e.preventDefault()} className="nav-menu w-nav-link">Projects</Link>
+                        <Link to="#" onClick={(e) => e.preventDefault()} className="nav-menu w-nav-link">Services</Link>
+                        <Link to="#" onClick={(e) => e.preventDefault()} className="nav-menu w-nav-link">Blog</Link>
+                        <Link to="#" onClick={(e) => e.preventDefault()} className="nav-menu w-nav-link">Product</Link>
+                        <Link to="#" onClick={(e) => e.preventDefault()} className="nav-menu w-nav-link">Pricing</Link>
+                        <Link to="#" onClick={(e) => e.preventDefault()} className="nav-menu w-nav-link">Contact</Link>
                       </div>
                     </div>
                     <div className="nav-link-wrapper second">
                       <div className="bold-description">Inner Pages</div>
                       <div className="nav-menu-wrap">
-                        <a href="https://steelcrest.webflow.io/project/high-performance-roofing-for-industrial-spaces" className="nav-menu w-nav-link">Project Single</a>
-                        <a href="https://steelcrest.webflow.io/service/residential-roofing-solutions" className="nav-menu w-nav-link">Services Single</a>
-                        <a href="https://steelcrest.webflow.io/blog-posts/metal-roofing-benefits-for-residential-and-commercial-buildings" className="nav-menu w-nav-link">Blog Single</a>
-                        <a href="https://steelcrest.webflow.io/product/galvanized-steel" className="nav-menu w-nav-link">Product Single</a>
-                        <a href="https://steelcrest.webflow.io/plan/starter" className="nav-menu w-nav-link">Pricing Single</a>
+                        <a href="#" onClick={(e) => e.preventDefault()} className="nav-menu w-nav-link">Project Single</a>
+                        <a href="#" onClick={(e) => e.preventDefault()} className="nav-menu w-nav-link">Services Single</a>
+                        <a href="#" onClick={(e) => e.preventDefault()} className="nav-menu w-nav-link">Blog Single</a>
+                        <a href="#" onClick={(e) => e.preventDefault()} className="nav-menu w-nav-link">Product Single</a>
+                        <a href="#" onClick={(e) => e.preventDefault()} className="nav-menu w-nav-link">Pricing Single</a>
                       </div>
                       <div className="nav-link-wrapper _3rd">
                         <div className="bold-description">Utility</div>
                         <div className="nav-menu-wrap">
-                          <Link to="/style-guide" className="nav-menu w-nav-link">Style Guide</Link>
-                          <Link to="/licenses" className="nav-menu w-nav-link">Licenses</Link>
-                          <Link to="/change-log" className="nav-menu w-nav-link">Changelog</Link>
-                          <Link to="/401" className="nav-menu w-nav-link">Password</Link>
-                          <Link to="/404" className="nav-menu w-nav-link">404</Link>
+                          <Link to="#" onClick={(e) => e.preventDefault()} className="nav-menu w-nav-link">Style Guide</Link>
+                          <Link to="#" onClick={(e) => e.preventDefault()} className="nav-menu w-nav-link">Licenses</Link>
+                          <Link to="#" onClick={(e) => e.preventDefault()} className="nav-menu w-nav-link">Changelog</Link>
+                          <Link to="#" onClick={(e) => e.preventDefault()} className="nav-menu w-nav-link">Password</Link>
+                          <Link to="#" onClick={(e) => e.preventDefault()} className="nav-menu w-nav-link">404</Link>
                         </div>
                       </div>
                     </div>
@@ -79,7 +79,7 @@ export default function Navbar() {
               <div className="nav-right-btn-wrap">
 
                 <div className="nav-button-wrap desktop">
-                  <Link to="/contact" data-w-id="fbb0286b-ad31-48d3-9d93-26d997d86728" className="secondary-button w-inline-block">
+                  <Link to="#" onClick={(e) => e.preventDefault()} className="secondary-button w-inline-block">
                     <div className="secondary-button-content">
                       <div className="secondary-button-text-wrap">
                         <div className="secondary-button-text">Let’s Talk</div>

@@ -50,7 +50,7 @@ export default function Hero() {
                 </div>
               </div>
               <div className="hero-button-box">
-                <Link to="/contact" data-w-id="cdc7e4fd-0d95-f65c-7db1-d63c73d49ad6" className="service-button w-inline-block">
+                <Link to="#" onClick={(e) => e.preventDefault()} className="service-button w-inline-block">
                   <div className="service-button-content">
                     <div className="secondary-button-text-wrap">
                       <div className="secondary-button-text">Get in Touch</div>
