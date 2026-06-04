@@ -236,6 +236,16 @@ body, html {
   .nav-link {
     padding: 10px 24px !important;
   }
+
+  /* Only Home (_1) keeps the black pill — remove it from About, Services, Contact */
+  .nav-link._2.w--current,
+  .nav-link._3.w--current,
+  .nav-link._4.w--current {
+    background-color: transparent !important;
+    color: var(--color--white) !important;
+    margin: 0 !important;
+    padding: 10px 24px !important;
+  }
 }
 
 .credibility-stats-box {
@@ -1025,3 +1035,259 @@ body, html {
   }
 }
 
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   MOBILE NAVIGATION — React hamburger menu & drawer
+   All rules are scoped to max-width breakpoints — zero effect on desktop
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Prevent horizontal overflow site-wide */
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* ── Hamburger toggle button ──────────────────────────────────────────────── */
+/* Hidden on desktop — only shown on mobile via media query */
+.mobile-menu-toggle {
+  display: none;
+}
+
+@media screen and (max-width: 991px) {
+  .mobile-menu-toggle {
+    display: none !important;
+  }
+
+  /* Hide Webflow desktop nav on mobile — React drawer handles it */
+  .nave-menu.w-nav-menu {
+    display: none !important;
+  }
+
+  /* Hide desktop "Let's Talk" button on mobile */
+  .nav-button-wrap.desktop {
+    display: none !important;
+  }
+}
+
+/* ── Backdrop overlay ─────────────────────────────────────────────────────── */
+.mobile-menu-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  z-index: 9998;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+@media screen and (max-width: 991px) {
+  .mobile-menu-backdrop.is-open {
+    display: block;
+    opacity: 1;
+  }
+}
+
+/* ── Slide-in drawer panel ────────────────────────────────────────────────── */
+.mobile-menu-drawer {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(360px, 92vw);
+  height: 100dvh;
+  background: #0a0a0a;
+  z-index: 9999;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+  border-left: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: -24px 0 80px rgba(0, 0, 0, 0.55);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+@media screen and (max-width: 991px) {
+  .mobile-menu-drawer {
+    display: flex;
+  }
+
+  .mobile-menu-drawer.is-open {
+    transform: translateX(0);
+  }
+}
+
+/* ── Drawer header ────────────────────────────────────────────────────────── */
+.mobile-menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  flex-shrink: 0;
+}
+
+.mobile-menu-logo img {
+  height: 56px;
+  width: auto;
+  filter: invert(1) brightness(2);
+  object-fit: contain;
+  display: block;
+}
+
+.mobile-menu-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.65);
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  flex-shrink: 0;
+  outline: none;
+}
+
+.mobile-menu-close:hover {
+  background: rgba(220, 53, 69, 0.14);
+  border-color: rgba(220, 53, 69, 0.4);
+  color: #dc3545;
+}
+
+/* ── Navigation links inside drawer ──────────────────────────────────────── */
+.mobile-menu-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 28px 22px 20px;
+  flex: 1;
+}
+
+.mobile-nav-link {
+  font-family: 'Old Standard TT', serif;
+  font-size: clamp(24px, 6vw, 30px);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  display: block;
+  transition: color 0.22s ease, padding-left 0.22s ease;
+  letter-spacing: -0.3px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mobile-nav-link:last-child {
+  border-bottom: none;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+  color: #b89047;
+  padding-left: 10px;
+}
+
+/* ── Drawer footer CTA ────────────────────────────────────────────────────── */
+.mobile-menu-footer {
+  padding: 20px 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  flex-shrink: 0;
+}
+
+.mobile-cta-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: #b89047;
+  color: #111111;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 16px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 18px rgba(184, 144, 71, 0.28);
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+}
+
+.mobile-cta-btn:hover {
+  background: #a0793a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(184, 144, 71, 0.38);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   MOBILE LAYOUT FIXES
+   All rules inside max-width breakpoints — no desktop impact
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Services Section: un-stack sticky cards on mobile ───────────────────── */
+@media screen and (max-width: 767px) {
+  .hero-service-single-card {
+    position: relative !important;
+    top: auto !important;
+    margin-bottom: 0 !important;
+  }
+
+  .service-inner-wrap {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 36px !important;
+  }
+
+  .hero-service-image-box {
+    aspect-ratio: 16 / 9 !important;
+  }
+
+  .hero-servoce-content {
+    font-size: clamp(16px, 4.2vw, 20px) !important;
+  }
+
+  .hero-service-content-box {
+    margin-top: 14px !important;
+    grid-row-gap: 16px !important;
+  }
+}
+
+/* ── Tight container padding on very small phones ────────────────────────── */
+@media screen and (max-width: 479px) {
+  .container,
+  .auto-container,
+  .w-container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .storyboard-player-container {
+    margin-top: 30px !important;
+    gap: 24px !important;
+  }
+
+  .narrative-title {
+    font-size: clamp(20px, 5.5vw, 26px) !important;
+  }
+
+  .vo-text {
+    font-size: 16px !important;
+  }
+}
+
+/* ── Navbar logo size on phones ──────────────────────────────────────────── */
+@media screen and (max-width: 767px) {
+  .navbar-logo-image {
+    height: 72px !important;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .navbar-logo-image {
+    height: 60px !important;
+  }
+}
