@@ -23,8 +23,18 @@ export default function Layout({ children }) {
         document.documentElement.setAttribute('data-wf-page', currentPageId);
 
         reinitWebflow();
-      }, 150);
-      return () => clearTimeout(timer);
+      }, 200);
+
+      // On mobile, fire a second reinit after the page has fully painted
+      const isMobile = window.innerWidth <= 991;
+      const mobileTimer = isMobile ? setTimeout(() => {
+        reinitWebflow();
+      }, 1000) : null;
+
+      return () => {
+        clearTimeout(timer);
+        if (mobileTimer) clearTimeout(mobileTimer);
+      };
     }
   }, [location.pathname, loaded]);
 

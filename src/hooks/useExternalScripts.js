@@ -85,6 +85,21 @@ export function useExternalScripts() {
         if (window.ScrollTrigger) {
           window.ScrollTrigger.refresh();
         }
+
+        // On mobile, scroll triggers may need extra nudges after layout settles
+        const isMobile = window.innerWidth <= 991;
+        if (isMobile) {
+          // Fire scroll events at multiple intervals to ensure IX2 animations trigger
+          [100, 300, 600, 1200].forEach((delay) => {
+            setTimeout(() => {
+              window.dispatchEvent(new Event('scroll'));
+              window.dispatchEvent(new Event('resize'));
+              if (window.ScrollTrigger) {
+                window.ScrollTrigger.refresh();
+              }
+            }, delay);
+          });
+        }
       } catch (e) {
         console.warn('Webflow re-initialization warning:', e);
       }

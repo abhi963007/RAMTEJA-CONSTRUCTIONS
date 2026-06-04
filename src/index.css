@@ -1158,7 +1158,6 @@ body {
   color: #dc3545;
 }
 
-/* ── Navigation links inside drawer ──────────────────────────────────────── */
 .mobile-menu-nav {
   display: flex;
   flex-direction: column;
@@ -1168,7 +1167,6 @@ body {
 
 .mobile-nav-link {
   font-family: 'Old Standard TT', serif;
-  font-size: clamp(24px, 6vw, 30px);
   font-weight: 700;
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
@@ -1180,19 +1178,17 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
-.mobile-nav-link:last-child {
-  border-bottom: none;
+.mobile-nav-link:hover {
+  color: #ffffff;
+  padding-left: 8px;
 }
 
-.mobile-nav-link:hover,
 .mobile-nav-link.active {
   color: #b89047;
-  padding-left: 10px;
 }
 
-/* ── Drawer footer CTA ────────────────────────────────────────────────────── */
-.mobile-menu-footer {
-  padding: 20px 22px;
+.mobile-menu-cta {
+  padding: 24px 22px;
   border-top: 1px solid rgba(255, 255, 255, 0.07);
   flex-shrink: 0;
 }
@@ -1200,17 +1196,18 @@ body {
 .mobile-cta-btn {
   display: block;
   width: 100%;
-  text-align: center;
+  padding: 16px 24px;
   background: #b89047;
-  color: #111111;
+  color: #000000;
+  border: none;
+  border-radius: 10px;
   font-family: 'Inter', sans-serif;
   font-size: 15px;
   font-weight: 700;
+  text-align: center;
   letter-spacing: 0.5px;
-  padding: 16px 24px;
-  border-radius: 8px;
+  cursor: pointer;
   text-decoration: none;
-  transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
   box-shadow: 0 4px 18px rgba(184, 144, 71, 0.28);
   -webkit-tap-highlight-color: transparent;
   box-sizing: border-box;
@@ -1222,13 +1219,30 @@ body {
   box-shadow: 0 8px 28px rgba(184, 144, 71, 0.38);
 }
 
+/* Tight container padding on very small phones */
+@media screen and (max-width: 479px) {
+  .container,
+  .auto-container,
+  .w-container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   MOBILE LAYOUT FIXES
-   All rules inside max-width breakpoints — no desktop impact
-   ═══════════════════════════════════════════════════════════════════════════ */
+  .storyboard-player-container {
+    margin-top: 30px !important;
+    gap: 24px !important;
+  }
 
-/* ── Services Section: un-stack sticky cards on mobile ───────────────────── */
+  .narrative-title {
+    font-size: clamp(20px, 5.5vw, 26px) !important;
+  }
+
+  .vo-text {
+    font-size: 16px !important;
+  }
+}
+
+/* Services Section: un-stack sticky cards on mobile */
 @media screen and (max-width: 767px) {
   .hero-service-single-card {
     position: relative !important;
@@ -1256,30 +1270,7 @@ body {
   }
 }
 
-/* ── Tight container padding on very small phones ────────────────────────── */
-@media screen and (max-width: 479px) {
-  .container,
-  .auto-container,
-  .w-container {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-  }
-
-  .storyboard-player-container {
-    margin-top: 30px !important;
-    gap: 24px !important;
-  }
-
-  .narrative-title {
-    font-size: clamp(20px, 5.5vw, 26px) !important;
-  }
-
-  .vo-text {
-    font-size: 16px !important;
-  }
-}
-
-/* ── Navbar logo size on phones ──────────────────────────────────────────── */
+/* Navbar logo size on phones */
 @media screen and (max-width: 767px) {
   .navbar-logo-image {
     height: 72px !important;
@@ -1289,5 +1280,86 @@ body {
 @media screen and (max-width: 479px) {
   .navbar-logo-image {
     height: 60px !important;
+  }
+}
+
+/* =====================================================================
+   MOBILE ANIMATION VISIBILITY FIX
+   Webflow IX2 sets inline opacity:0 and transform styles as initial
+   animation states. On mobile in a React SPA, scroll triggers do not
+   fire reliably, leaving elements stuck invisible.
+   Force all animated elements visible on mobile only.
+   ===================================================================== */
+@media screen and (max-width: 991px) {
+
+  /* Services section */
+  .section.hero-service,
+  .section.hero-service .services-wrap,
+  .section.hero-service .hero-service-title-box,
+  .section.hero-service .section-sub-title,
+  .section.hero-service .hero-service-title,
+  .section.hero-service .service-inner-wrap,
+  .section.hero-service .hero-service-single-card,
+  .section.hero-service .hero-service-image-box-wrap,
+  .section.hero-service .hero-service-image-box,
+  .section.hero-service .hero-service-image,
+  .section.hero-service .image-overlay,
+  .section.hero-service .hero-servoce-overly-wrap,
+  .section.hero-service .hero-service-card-name,
+  .section.hero-service .hero-service-name,
+  .section.hero-service .hero-service-content-box,
+  .section.hero-service .hero-servoce-content,
+  .section.hero-service .primary-button {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+  }
+
+  /* About section */
+  .section.hero-about,
+  .section.hero-about .hero-about-wrap,
+  .section.hero-about .section-sub-title,
+  .section.hero-about .hero-about-title-box,
+  .section.hero-about .hero-about-title,
+  .section.hero-about .description,
+  .section.hero-about .storyboard-player-container,
+  .section.hero-about .storyboard-screen-side,
+  .section.hero-about .storyboard-narrative-side,
+  .section.hero-about .hero-about-button-box {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+  }
+
+  /* Hero section */
+  .section.hero .hero-wrap,
+  .section.hero .hero-title,
+  .section.hero .hero-wrap > *,
+  .credibility-stats-box,
+  .credibility-stats-col,
+  .credibility-stats-value,
+  .credibility-stats-label {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+  }
+
+  /* Motion graphic and CTA sections */
+  .motion-graphic-sec .motion-graphic-wrap,
+  .motion-graphic-sec .motion-graphic-label,
+  .motion-graphic-sec .motion-graphic-text-1,
+  .motion-graphic-sec .motion-graphic-text-2,
+  .cta-wrap,
+  .cta-title {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+  }
+
+  /* Webflow IX2 animated elements on mobile */
+  *[data-w-id] {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
   }
 }
