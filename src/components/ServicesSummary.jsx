@@ -26,7 +26,7 @@ export default function ServicesSummary() {
               </div>
               <div className="hero-service-content-box">
                 <div className="hero-servoce-content" style={{ fontFamily: "'Old Standard TT', serif", fontSize: 'clamp(22px, 2vw, 28px)', lineHeight: '1.65', color: '#333' }}>From high-rise apartment towers to large-scale townships. Engineered for speed, built for the legacy.</div>
-                <Link to="#" onClick={(e) => e.preventDefault()} className="primary-button w-inline-block">
+                <Link to="/services" className="primary-button w-inline-block">
                   <div className="primary-button-text-wrap">
                     <div className="primary-button-text">Explore (1/3)</div>
                     <div className="primary-button-hover-text">Explore (1/3)</div>
@@ -49,7 +49,7 @@ export default function ServicesSummary() {
               </div>
               <div className="hero-service-content-box">
                 <div className="hero-servoce-content" style={{ fontFamily: "'Old Standard TT', serif", fontSize: 'clamp(18px, 1.7vw, 23px)', lineHeight: '1.65', color: '#333' }}>Office buildings, schools, hospitals, and public infrastructure delivered with precision and accountability.</div>
-                <Link to="#" onClick={(e) => e.preventDefault()} className="primary-button w-inline-block">
+                <Link to="/services" className="primary-button w-inline-block">
                   <div className="primary-button-text-wrap">
                     <div className="primary-button-text">Explore (2/3)</div>
                     <div className="primary-button-hover-text">Explore (2/3)</div>
@@ -72,7 +72,7 @@ export default function ServicesSummary() {
               </div>
               <div className="hero-service-content-box">
                 <div className="hero-servoce-content" style={{ fontFamily: "'Old Standard TT', serif", fontSize: 'clamp(22px, 2vw, 28px)', lineHeight: '1.65', color: '#333' }}>Full project delivery from design to final handover. One team, one contract, zero gaps.</div>
-                <Link to="#" onClick={(e) => e.preventDefault()} className="primary-button w-inline-block">
+                <Link to="/services" className="primary-button w-inline-block">
                   <div className="primary-button-text-wrap">
                     <div className="primary-button-text">Explore (3/3)</div>
                     <div className="primary-button-hover-text">Explore (3/3)</div>

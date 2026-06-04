@@ -53,31 +53,33 @@ export default function Navbar() {
                 Home
               </NavLink>
               <NavLink
-                to="#"
-                onClick={(e) => e.preventDefault()}
-                className="nav-link _2 white w-nav-link"
+                to="/about"
+                className={({ isActive }) =>
+                  `nav-link _2 white w-nav-link${isActive ? ' w--current' : ''}`
+                }
               >
                 About
               </NavLink>
               <NavLink
-                to="#"
-                onClick={(e) => e.preventDefault()}
-                className="nav-link _3 white w-nav-link"
+                to="/services"
+                className={({ isActive }) =>
+                  `nav-link _3 white w-nav-link${isActive ? ' w--current' : ''}`
+                }
               >
                 Services
               </NavLink>
               <NavLink
-                to="#"
-                onClick={(e) => e.preventDefault()}
-                className="nav-link _4 white w-nav-link"
+                to="/contact"
+                className={({ isActive }) =>
+                  `nav-link _4 white w-nav-link${isActive ? ' w--current' : ''}`
+                }
               >
                 Contact
               </NavLink>
 
               <div className="primary-button-wrapper-two mobile">
                 <Link
-                  to="#"
-                  onClick={(e) => e.preventDefault()}
+                  to="/contact"
                   className="primary-button w-inline-block"
                 >
                   <div className="primary-button-text-wrap">
@@ -96,8 +98,7 @@ export default function Navbar() {
                 {/* Desktop "Let's Talk" button */}
                 <div className="nav-button-wrap desktop">
                   <Link
-                    to="#"
-                    onClick={(e) => e.preventDefault()}
+                    to="/contact"
                     className="secondary-button w-inline-block"
                   >
                     <div className="secondary-button-content">
@@ -263,27 +264,33 @@ export default function Navbar() {
           >
             Home
           </NavLink>
-          <a
-            href="#"
-            onClick={(e) => { e.preventDefault(); closeMenu(); }}
-            className="mobile-nav-link"
+          <NavLink
+            to="/about"
+            onClick={closeMenu}
+            className={({ isActive }) =>
+              `mobile-nav-link${isActive ? ' active' : ''}`
+            }
           >
             About
-          </a>
-          <a
-            href="#"
-            onClick={(e) => { e.preventDefault(); closeMenu(); }}
-            className="mobile-nav-link"
+          </NavLink>
+          <NavLink
+            to="/services"
+            onClick={closeMenu}
+            className={({ isActive }) =>
+              `mobile-nav-link${isActive ? ' active' : ''}`
+            }
           >
             Services
-          </a>
-          <a
-            href="#"
-            onClick={(e) => { e.preventDefault(); closeMenu(); }}
-            className="mobile-nav-link"
+          </NavLink>
+          <NavLink
+            to="/contact"
+            onClick={closeMenu}
+            className={({ isActive }) =>
+              `mobile-nav-link${isActive ? ' active' : ''}`
+            }
           >
             Contact
-          </a>
+          </NavLink>
         </nav>
       </div>
     </div>

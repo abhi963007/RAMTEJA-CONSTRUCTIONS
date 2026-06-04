@@ -9,6 +9,7 @@ export default function Layout({ children }) {
   const location = useLocation();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     if (loaded) {
       // Small timeout to ensure DOM elements are fully mounted
       const timer = setTimeout(() => {
@@ -16,6 +17,7 @@ export default function Layout({ children }) {
         const wfPageMap = {
           '/': '6992bba8cdc518727404d3cf',      // Home
           '/about': '6992bba8cdc518727404d3d0',  // About
+          '/services': '699ad38ff92ed1d0d483cf13', // Services
           '/service': '699ad38ff92ed1d0d483cf13', // Services
           '/contact': '6992bba8cdc518727404d3d9' // Contact
         };
