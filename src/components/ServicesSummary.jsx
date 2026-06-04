@@ -112,7 +112,7 @@ export default function ServicesSummary() {
               style={{ opacity: 0 }}
               className="hero-service-title"
             >
-              <span className="title-initial-cap">C</span>apabilities for all levels of complexity
+              Capabilities for all levels of complexity
             </h3>
             <p
               data-w-id="ba61c031-9849-706d-2681-a2c07b3e2287"
