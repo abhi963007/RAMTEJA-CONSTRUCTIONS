@@ -117,7 +117,7 @@ export default function AboutSummary() {
             Who We Are
           </div>
           <div className="hero-about-title-box" style={{ marginTop: '20px', marginBottom: '50px' }}>
-            <h2 className="hero-about-title" style={{ fontSize: 'clamp(28px, 4vw, 44px)', lineHeight: '1.2', fontWeight: '800', color: '#ffffff' }}>
+            <h2 className="hero-about-title" style={{ fontSize: 'clamp(28px, 4vw, 44px)', lineHeight: '1.2', fontWeight: '800', color: '#ffffff', fontFamily: "'Montserrat', sans-serif" }}>
               One Partner. Complete Ownership. Start to Finish.
             </h2>
             <p className="description" style={{ marginTop: '20px', fontSize: 'clamp(15px, 1.8vw, 19px)', color: '#a0a0a5', lineHeight: '1.65', fontFamily: "'Inter', sans-serif", maxWidth: '900px', marginInline: 'auto' }}>
