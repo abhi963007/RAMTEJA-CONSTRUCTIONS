@@ -1,9 +1,67 @@
-import React, { useState, useEffect } from 'react';
-import { Link, NavLink, useNavigate } from 'react-router-dom';
+import React, { useState, useEffect, useRef } from 'react';
+import { Link, NavLink, useNavigate, useLocation } from 'react-router-dom';
 
 export default function Navbar() {
   const navigate = useNavigate();
+  const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [hoverStyle, setHoverStyle] = useState({ left: 0, width: 0, opacity: 0 });
+  const navContainerRef = useRef(null);
+
+  const updatePosition = (element) => {
+    if (element && navContainerRef.current) {
+      const containerRect = navContainerRef.current.getBoundingClientRect();
+      const rect = element.getBoundingClientRect();
+      setHoverStyle({
+        left: rect.left - containerRect.left,
+        width: rect.width,
+        opacity: 1
+      });
+    }
+  };
+
+  const updateActivePosition = () => {
+    if (navContainerRef.current) {
+      const activeLink = navContainerRef.current.querySelector('.nav-link.w--current');
+      if (activeLink) {
+        updatePosition(activeLink);
+      } else {
+        setHoverStyle((prev) => ({ ...prev, opacity: 0 }));
+      }
+    }
+  };
+
+  useEffect(() => {
+    const timer = setTimeout(updateActivePosition, 100);
+    window.addEventListener('resize', updateActivePosition);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('resize', updateActivePosition);
+    };
+  }, [location.pathname]);
+
+  const [scrollState, setScrollState] = useState('top'); // 'top' | 'scrolled' | 'hidden'
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (menuOpen) return;
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY <= 20) {
+        setScrollState('top');
+      } else if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+        setScrollState('hidden');
+      } else if (currentScrollY < lastScrollY.current) {
+        setScrollState('scrolled');
+      }
+      
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [menuOpen]);
 
   // Lock body scroll when the mobile drawer is open
   useEffect(() => {
@@ -28,7 +86,7 @@ export default function Navbar() {
       data-easing="ease"
       data-easing2="ease"
       role="banner"
-      className="navbar w-nav"
+      className={`navbar w-nav ${scrollState === 'hidden' ? 'nav-hidden' : scrollState === 'scrolled' ? 'nav-scrolled' : 'nav-top'}`}
     >
       <div className="auto-container w-container">
         <div className="navbar-content">
@@ -39,36 +97,68 @@ export default function Navbar() {
 
           {/* ─── Desktop navigation (Webflow-managed, untouched) ─── */}
           <nav role="navigation" className="nave-menu w-nav-menu">
-            <div className="nav-menu-content display-none">
+            <div 
+              ref={navContainerRef} 
+              onMouseLeave={updateActivePosition} 
+              className="nav-menu-content display-none" 
+              style={{ position: 'relative' }}
+            >
+              {/* Sliding Navigation Indicator */}
+              <div 
+                className="nav-hover-indicator"
+                style={{
+                  position: 'absolute',
+                  top: '5px',
+                  bottom: '5px',
+                  left: `${hoverStyle.left}px`,
+                  width: `${hoverStyle.width}px`,
+                  opacity: hoverStyle.opacity,
+                  backgroundColor: 'rgba(255, 255, 255, 0.08)',
+                  border: '1px solid rgba(184, 144, 71, 0.25)',
+                  borderRadius: '100px',
+                  transition: 'left 0.3s cubic-bezier(0.25, 1, 0.5, 1), width 0.3s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.2s ease',
+                  pointerEvents: 'none',
+                  zIndex: 0
+                }}
+              />
+
               <NavLink
                 to="/"
+                onMouseEnter={(e) => updatePosition(e.currentTarget)}
                 className={({ isActive }) =>
                   `nav-link _1 white w-nav-link${isActive ? ' w--current' : ''}`
                 }
+                style={{ position: 'relative', zIndex: 1 }}
               >
                 Home
               </NavLink>
               <NavLink
                 to="/about"
+                onMouseEnter={(e) => updatePosition(e.currentTarget)}
                 className={({ isActive }) =>
                   `nav-link _2 white w-nav-link${isActive ? ' w--current' : ''}`
                 }
+                style={{ position: 'relative', zIndex: 1 }}
               >
                 About
               </NavLink>
               <NavLink
                 to="/services"
+                onMouseEnter={(e) => updatePosition(e.currentTarget)}
                 className={({ isActive }) =>
                   `nav-link _3 white w-nav-link${isActive ? ' w--current' : ''}`
                 }
+                style={{ position: 'relative', zIndex: 1 }}
               >
                 Services
               </NavLink>
               <NavLink
                 to="/contact"
+                onMouseEnter={(e) => updatePosition(e.currentTarget)}
                 className={({ isActive }) =>
                   `nav-link _4 white w-nav-link${isActive ? ' w--current' : ''}`
                 }
+                style={{ position: 'relative', zIndex: 1 }}
               >
                 Contact
               </NavLink>
