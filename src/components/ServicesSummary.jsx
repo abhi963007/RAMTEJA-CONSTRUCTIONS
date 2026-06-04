@@ -26,7 +26,7 @@ export default function ServicesSummary() {
               </div>
               <div className="hero-service-content-box">
                 <div className="hero-servoce-content" style={{ fontFamily: "'Old Standard TT', serif", fontSize: 'clamp(22px, 2vw, 28px)', lineHeight: '1.65', color: '#333' }}>From high-rise apartment towers to large-scale townships. Engineered for speed, built for the legacy.</div>
-                <Link to="/service" data-w-id="0315d2b4-80bd-39b0-4d41-02eb764f6d59" className="primary-button w-inline-block">
+                <Link to="#" onClick={(e) => e.preventDefault()} className="primary-button w-inline-block">
                   <div className="primary-button-text-wrap">
                     <div className="primary-button-text">Explore (1/3)</div>
                     <div className="primary-button-hover-text">Explore (1/3)</div>
@@ -34,7 +34,7 @@ export default function ServicesSummary() {
                 </Link>
               </div>
             </div>
-
+ 
             {/* Service 2: Commercial */}
             <div className="hero-service-single-card two">
               <div className="hero-service-image-box-wrap">
@@ -49,7 +49,7 @@ export default function ServicesSummary() {
               </div>
               <div className="hero-service-content-box">
                 <div className="hero-servoce-content" style={{ fontFamily: "'Old Standard TT', serif", fontSize: 'clamp(18px, 1.7vw, 23px)', lineHeight: '1.65', color: '#333' }}>Office buildings, schools, hospitals, and public infrastructure delivered with precision and accountability.</div>
-                <Link to="/service" data-w-id="0315d2b4-80bd-39b0-4d41-02eb764f6d59" className="primary-button w-inline-block">
+                <Link to="#" onClick={(e) => e.preventDefault()} className="primary-button w-inline-block">
                   <div className="primary-button-text-wrap">
                     <div className="primary-button-text">Explore (2/3)</div>
                     <div className="primary-button-hover-text">Explore (2/3)</div>
@@ -57,7 +57,7 @@ export default function ServicesSummary() {
                 </Link>
               </div>
             </div>
-
+ 
             {/* Service 3: Turnkey Delivery */}
             <div className="hero-service-single-card three">
               <div className="hero-service-image-box-wrap">
@@ -72,7 +72,7 @@ export default function ServicesSummary() {
               </div>
               <div className="hero-service-content-box">
                 <div className="hero-servoce-content" style={{ fontFamily: "'Old Standard TT', serif", fontSize: 'clamp(22px, 2vw, 28px)', lineHeight: '1.65', color: '#333' }}>Full project delivery from design to final handover. One team, one contract, zero gaps.</div>
-                <Link to="/service" data-w-id="0315d2b4-80bd-39b0-4d41-02eb764f6d59" className="primary-button w-inline-block">
+                <Link to="#" onClick={(e) => e.preventDefault()} className="primary-button w-inline-block">
                   <div className="primary-button-text-wrap">
                     <div className="primary-button-text">Explore (3/3)</div>
                     <div className="primary-button-hover-text">Explore (3/3)</div>

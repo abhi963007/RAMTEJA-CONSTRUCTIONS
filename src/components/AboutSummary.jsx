@@ -168,7 +168,7 @@ export default function AboutSummary() {
         </div>
 
         <div className="hero-about-button-box" style={{ marginTop: '60px', textAlign: 'center', display: 'flex', justifyContent: 'center' }}>
-          <Link to="/project" className="primary-button w-inline-block">
+          <Link to="#" onClick={(e) => e.preventDefault()} className="primary-button w-inline-block">
             <div className="primary-button-text-wrap">
               <div className="primary-button-text">See Our Work</div>
               <div className="primary-button-hover-text">See Our Work</div>
