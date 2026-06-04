@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Hero() {
+  const navigate = useNavigate();
   return (
     <section className="section hero" style={{ position: 'relative', overflow: 'hidden' }}>
       {/* Background Video */}
@@ -50,7 +51,7 @@ export default function Hero() {
                 </div>
               </div>
               <div className="hero-button-box">
-                <Link to="/contact" className="service-button w-inline-block">
+                <Link to="#" onClick={(e) => { e.preventDefault(); navigate('/contact'); }} className="service-button w-inline-block">
                   <div className="service-button-content">
                     <div className="secondary-button-text-wrap">
                       <div className="secondary-button-text">Get in Touch</div>

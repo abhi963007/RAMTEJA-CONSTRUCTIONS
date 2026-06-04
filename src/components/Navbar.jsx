@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 
 export default function Navbar() {
+  const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
 
   // Lock body scroll when the mobile drawer is open
@@ -79,7 +80,8 @@ export default function Navbar() {
 
               <div className="primary-button-wrapper-two mobile">
                 <Link
-                  to="/contact"
+                  to="#"
+                  onClick={(e) => { e.preventDefault(); navigate('/contact'); }}
                   className="primary-button w-inline-block"
                 >
                   <div className="primary-button-text-wrap">
@@ -98,7 +100,8 @@ export default function Navbar() {
                 {/* Desktop "Let's Talk" button */}
                 <div className="nav-button-wrap desktop">
                   <Link
-                    to="/contact"
+                    to="#"
+                    onClick={(e) => { e.preventDefault(); navigate('/contact'); }}
                     className="secondary-button w-inline-block"
                   >
                     <div className="secondary-button-content">

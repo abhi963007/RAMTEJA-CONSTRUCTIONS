@@ -1,15 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function ServicesSummary() {
+  const navigate = useNavigate();
   return (
     <section className="section hero-service">
       <div className="container">
         <div className="services-wrap">
           <div className="hero-service-title-box">
             <div style={{ opacity: 1 }} className="section-sub-title white">Our Offerings</div>
-            <h3 style={{ opacity: 1, fontFamily: "'Old Standard TT', serif" }} className="hero-service-title">Capabilities for all levels of complexity</h3>
-            <p style={{ color: 'rgba(0,0,0,0.8)', fontSize: '20px', marginTop: '10px', fontFamily: "'Old Standard TT', serif", fontStyle: 'italic' }}>Every square foot. On time. On quality. As promised.</p>
+            <h3 style={{ opacity: 1 }} className="hero-service-title">Capabilities for all levels of complexity</h3>
+            <p style={{ color: 'rgba(0,0,0,0.8)', fontSize: '20px', marginTop: '10px', fontStyle: 'italic' }}>Every square foot. On time. On quality. As promised.</p>
           </div>
           <div data-w-id="a7b3b0d5-2bac-d199-c422-4a822b927aab" className="service-inner-wrap">
             {/* Service 1: Residential */}
@@ -25,8 +26,8 @@ export default function ServicesSummary() {
                 </div>
               </div>
               <div className="hero-service-content-box">
-                <div className="hero-servoce-content" style={{ fontFamily: "'Old Standard TT', serif", fontSize: 'clamp(22px, 2vw, 28px)', lineHeight: '1.65', color: '#333' }}>From high-rise apartment towers to large-scale townships. Engineered for speed, built for the legacy.</div>
-                <Link to="/services" className="primary-button w-inline-block">
+                <div className="hero-servoce-content" style={{ fontSize: 'clamp(22px, 2vw, 28px)', lineHeight: '1.65', color: '#333' }}>From high-rise apartment towers to large-scale townships. Engineered for speed, built for the legacy.</div>
+                <Link to="#" onClick={(e) => { e.preventDefault(); navigate('/services'); }} className="primary-button w-inline-block">
                   <div className="primary-button-text-wrap">
                     <div className="primary-button-text">Explore (1/3)</div>
                     <div className="primary-button-hover-text">Explore (1/3)</div>
@@ -48,8 +49,8 @@ export default function ServicesSummary() {
                 </div>
               </div>
               <div className="hero-service-content-box">
-                <div className="hero-servoce-content" style={{ fontFamily: "'Old Standard TT', serif", fontSize: 'clamp(18px, 1.7vw, 23px)', lineHeight: '1.65', color: '#333' }}>Office buildings, schools, hospitals, and public infrastructure delivered with precision and accountability.</div>
-                <Link to="/services" className="primary-button w-inline-block">
+                <div className="hero-servoce-content" style={{ fontSize: 'clamp(18px, 1.7vw, 23px)', lineHeight: '1.65', color: '#333' }}>Office buildings, schools, hospitals, and public infrastructure delivered with precision and accountability.</div>
+                <Link to="#" onClick={(e) => { e.preventDefault(); navigate('/services'); }} className="primary-button w-inline-block">
                   <div className="primary-button-text-wrap">
                     <div className="primary-button-text">Explore (2/3)</div>
                     <div className="primary-button-hover-text">Explore (2/3)</div>
@@ -71,8 +72,8 @@ export default function ServicesSummary() {
                 </div>
               </div>
               <div className="hero-service-content-box">
-                <div className="hero-servoce-content" style={{ fontFamily: "'Old Standard TT', serif", fontSize: 'clamp(22px, 2vw, 28px)', lineHeight: '1.65', color: '#333' }}>Full project delivery from design to final handover. One team, one contract, zero gaps.</div>
-                <Link to="/services" className="primary-button w-inline-block">
+                <div className="hero-servoce-content" style={{ fontSize: 'clamp(22px, 2vw, 28px)', lineHeight: '1.65', color: '#333' }}>Full project delivery from design to final handover. One team, one contract, zero gaps.</div>
+                <Link to="#" onClick={(e) => { e.preventDefault(); navigate('/services'); }} className="primary-button w-inline-block">
                   <div className="primary-button-text-wrap">
                     <div className="primary-button-text">Explore (3/3)</div>
                     <div className="primary-button-hover-text">Explore (3/3)</div>

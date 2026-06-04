@@ -10,10 +10,9 @@ const brands = [
 export default function BrandTicker() {
   return (
     <section className="section hero-brand brand-ticker-section">
-      {/* Duplicate set for seamless infinite loop — no JS needed */}
-      <div className="brand-ticker-track">
-        {[0, 1].map((clone) => (
-          <div className="brand-ticker-set" key={clone} aria-hidden={clone === 1 ? 'true' : undefined}>
+      <div className="brand-ticker-track scroll-left">
+        {[0, 1, 2, 3].map((clone) => (
+          <div className="brand-ticker-set" key={clone} aria-hidden={clone > 0 ? 'true' : undefined}>
             {brands.map((logo, i) => (
               <div className="brand-ticker-item" key={i}>
                 <img loading="lazy" src={logo} alt={`brand-${i + 1}`} className="brand-logo" />

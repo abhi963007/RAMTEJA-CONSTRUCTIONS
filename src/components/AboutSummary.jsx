@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function AboutSummary() {
+  const navigate = useNavigate();
   const [activeStep, setActiveStep] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const [progress, setProgress] = useState(0);
@@ -76,7 +77,7 @@ export default function AboutSummary() {
         <div className="hero-about-wrap" style={{ width: '100%', maxWidth: '100%', textAlign: 'center' }}>
           <div className="section-sub-title gray">Who We Are</div>
           <div className="hero-about-title-box" style={{ marginTop: '20px', marginBottom: '40px' }}>
-            <h2 className="hero-about-title" style={{ fontSize: '38px', lineHeight: '1.25', fontWeight: '800', fontFamily: "'Old Standard TT', serif" }}>
+            <h2 className="hero-about-title" style={{ fontSize: '38px', lineHeight: '1.25', fontWeight: '800' }}>
               One Partner. Complete Ownership. Start to Finish.
             </h2>
             <p className="description" style={{ marginTop: '20px', fontSize: '18px', color: '#555555', lineHeight: '1.6', fontFamily: "'Inter', sans-serif" }}>
@@ -168,7 +169,7 @@ export default function AboutSummary() {
         </div>
 
         <div className="hero-about-button-box" style={{ marginTop: '60px', textAlign: 'center', display: 'flex', justifyContent: 'center' }}>
-          <Link to="/projects" className="primary-button w-inline-block">
+          <Link to="#" onClick={(e) => { e.preventDefault(); navigate('/projects'); }} className="primary-button w-inline-block">
             <div className="primary-button-text-wrap">
               <div className="primary-button-text">See Our Work</div>
               <div className="primary-button-hover-text">See Our Work</div>
