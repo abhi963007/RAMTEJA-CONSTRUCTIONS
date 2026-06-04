@@ -120,6 +120,16 @@ body, html {
   min-height: 100vh !important;
   box-sizing: border-box !important;
   background-image: none !important; /* video handles the background */
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  padding-top: 220px !important; /* Adjusted to move content slightly down */
+  padding-bottom: 120px !important; /* Adjusted to move content slightly down */
+}
+
+.navbar {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
 }
 
 /* ─── Brand Ticker: Edge-to-Edge Infinite Loop ───────────────────────────── */
@@ -264,6 +274,10 @@ body, html {
 }
 
 @media screen and (max-width: 767px) {
+  .section.hero {
+    padding-top: 150px !important; /* Adjusted to move content slightly down */
+    padding-bottom: 80px !important;
+  }
   .credibility-stats-box {
     gap: 32px;
   }
@@ -276,6 +290,10 @@ body, html {
 }
 
 @media screen and (max-width: 479px) {
+  .section.hero {
+    padding-top: 130px !important; /* Adjusted to move content slightly down */
+    padding-bottom: 60px !important;
+  }
   .credibility-stats-box {
     flex-direction: column;
     align-items: flex-start;
@@ -306,7 +324,7 @@ body, html {
 
 /* Logo image rendering — inverts the dark outlines to white for dark navbar */
 .navbar-logo-image {
-  height: 150px !important;
+  height: 110px !important; /* Reduced from 150px to move logo and navbar contents up */
   width: auto !important;
   max-height: none !important;
   max-width: none !important;
