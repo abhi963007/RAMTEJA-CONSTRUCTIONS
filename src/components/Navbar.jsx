@@ -46,7 +46,7 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       if (menuOpen) return;
-      const currentScrollY = window.scrollY;
+      const currentScrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
       
       if (currentScrollY <= 20) {
         setScrollState('top');

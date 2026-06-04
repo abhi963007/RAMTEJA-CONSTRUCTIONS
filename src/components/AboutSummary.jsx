@@ -36,30 +36,30 @@ export default function AboutSummary() {
     {
       id: '01',
       eyebrow: "Execution Risks",
-      title: "Delays Create Domino Effects",
-      description: "Fragmented coordination leads to cascading delays, rising costs, and operational risk across every phase of construction.",
+      title: "",
+      description: "In real estate, one delay becomes many.\nTimelines slip.\nBudgets stretch.\nLiabilities grow.",
       keyPoints: ["Timeline Risk", "Budget Pressure", "Coordination Gaps"],
-      superText: "PROJECT DELAYED",
+      superText: "",
       themeColor: "#ff453a",
       videoSrc: "/media/about_delay.mp4"
     },
     {
       id: '02',
       eyebrow: "Integrated Delivery",
-      title: "Precision Execution At Scale",
-      description: "RT streamlines engineering, procurement, and construction into one disciplined system built for dependable large-scale delivery.",
+      title: "",
+      description: "RT helps developers stay ahead of all three —\nDelivering unified execution.\nEnsuring real-time site sync.\nExecuting at serious scale.",
       keyPoints: ["Unified Execution", "Real-Time Coordination", "Site-Wide Precision"],
-      superText: "COORDINATED EXECUTION\nMOMENTUM",
+      superText: "",
       themeColor: "#b89047",
       videoSrc: "/media/about_precision.mp4"
     },
     {
       id: '03',
       eyebrow: "Built For Scale",
-      title: "Built For Developers Moving Fast",
-      description: "From planning to handover, RT helps developers accelerate timelines without compromising execution quality.",
+      title: "",
+      description: "Built for developers moving fast.",
       keyPoints: ["Faster Delivery", "Enterprise Scale", "Long-Term Reliability"],
-      superText: "BUILT FOR DEVELOPERS\nMOVING FAST",
+      superText: "",
       themeColor: "#b89047",
       videoSrc: "/media/about_speed.mp4"
     }
@@ -104,10 +104,10 @@ export default function AboutSummary() {
 
   return (
     <section className="section hero-about" style={{ background: '#0a0a0c', paddingBottom: '100px', position: 'relative', overflow: 'hidden' }}>
-      
+
       {/* Premium Blueprint Grid Overlay */}
       <div className="blueprint-grid-overlay" />
-      
+
       {/* Decorative Radial Ambient Glow */}
       <div className="cinematic-ambient-glow" />
 
@@ -132,7 +132,7 @@ export default function AboutSummary() {
           {/* Left Column: Visual Screen Side (65-70% width on Desktop) */}
           <div className="storyboard-screen-side">
             <div className="storyboard-display-screen" style={{ background: '#020202', position: 'relative', overflow: 'hidden' }}>
-              
+
               {/* Active Video with Cinematic Zoom */}
               <video
                 key={displayStep}
@@ -173,24 +173,34 @@ export default function AboutSummary() {
                   zIndex: 2,
                   pointerEvents: 'none'
                 }}>
-                  <div 
+                  <div
                     key={activeStep}
                     className="super-text-overlay"
                     style={{
                       color: '#ffffff',
-                      fontSize: 'clamp(20px, 2.6vw, 36px)',
-                      fontWeight: '800',
-                      lineHeight: '1.3',
+                      fontSize: 'clamp(14px, 2.6vw, 36px)',
+                      fontWeight: '900',
+                      lineHeight: '1.25',
                       textAlign: 'center',
                       textTransform: 'uppercase',
                       letterSpacing: '2px',
-                      fontFamily: "'Manrope', sans-serif",
-                      textShadow: '0 4px 30px rgba(0,0,0,0.95)',
-                      maxWidth: '80%',
-                      whiteSpace: 'pre-line'
+                      fontFamily: "'Montserrat', sans-serif",
+                      textShadow: '0 8px 32px rgba(0,0,0,0.85)',
+                      maxWidth: '85%'
                     }}
                   >
-                    {steps[activeStep].superText}
+                    {steps[activeStep].superText.split('\n').map((line, lIdx) => (
+                      <div key={lIdx} className="cinematic-line-wrapper">
+                        <span
+                          className="cinematic-line-span"
+                          style={{
+                            animationDelay: `${lIdx * 0.15}s`
+                          }}
+                        >
+                          {line}
+                        </span>
+                      </div>
+                    ))}
                   </div>
                 </div>
               )}
@@ -217,7 +227,10 @@ export default function AboutSummary() {
                     className={`timeline-segment-wrapper ${idx === activeStep ? 'active' : ''}`}
                     onClick={() => handleStepClick(idx)}
                   >
-                    <span className="segment-label">0{idx + 1} {step.eyebrow}</span>
+                    <span className="segment-label">
+                      <span className="step-num">0{idx + 1}</span>{' '}
+                      <span className="step-name">{step.eyebrow}</span>
+                    </span>
                     <div className="timeline-segment">
                       <div
                         className="timeline-segment-fill"
@@ -247,14 +260,111 @@ export default function AboutSummary() {
               </div>
 
               {/* Heading */}
-              <h3 className="narrative-title" style={{ color: '#ffffff' }}>
-                {steps[activeStep].title}
-              </h3>
+              {steps[activeStep].title && (
+                <h3 className="narrative-title" style={{ color: '#ffffff' }}>
+                  {steps[activeStep].title}
+                </h3>
+              )}
 
               {/* Description */}
-              <p className="narrative-desc-text">
-                {steps[activeStep].description}
-              </p>
+              <div
+                className={`narrative-desc-text ${!steps[activeStep].title ? 'montserrat-font' : ''}`}
+                style={{
+                  fontFamily: !steps[activeStep].title ? "'Montserrat', sans-serif" : undefined,
+                  marginTop: !steps[activeStep].title ? '10px' : undefined,
+                  marginBottom: !steps[activeStep].title ? '40px' : undefined,
+                  opacity: 1
+                }}
+              >
+                {!steps[activeStep].title ? (
+                  (() => {
+                    const lines = steps[activeStep].description.split('\n');
+                    const intro = lines[0] || '';
+                    const statements = lines.slice(1);
+                    return (
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', textAlign: 'left' }}>
+                        {statements.length > 0 ? (
+                          <>
+                            <div style={{
+                              fontSize: 'clamp(17px, 2vw, 22px)',
+                              fontWeight: '400',
+                              color: 'rgba(255, 255, 255, 0.7)',
+                              lineHeight: '1.45',
+                              letterSpacing: '0.2px',
+                              marginBottom: '10px',
+                              fontFamily: "'Montserrat', sans-serif"
+                            }}>
+                              {intro}
+                            </div>
+                            {statements.map((stmt, idx) => (
+                              <div 
+                                key={idx}
+                                style={{
+                                  fontSize: 'clamp(24px, 3.2vw, 38px)',
+                                  fontWeight: '800',
+                                  color: '#ffffff',
+                                  lineHeight: '1.15',
+                                  letterSpacing: '-0.5px',
+                                  display: 'flex',
+                                  alignItems: 'center',
+                                  gap: '16px',
+                                  fontFamily: "'Montserrat', sans-serif",
+                                  animation: `fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) ${0.1 + idx * 0.15}s forwards`,
+                                  opacity: 0,
+                                  transform: 'translateY(16px)'
+                                }}
+                              >
+                                <span style={{ 
+                                  width: '8px', 
+                                  height: '8px', 
+                                  borderRadius: '50%', 
+                                  backgroundColor: steps[activeStep].themeColor || '#ff453a',
+                                  display: 'inline-block',
+                                  boxShadow: `0 0 12px ${steps[activeStep].themeColor || '#ff453a'}`,
+                                  flexShrink: 0
+                                }} />
+                                {stmt}
+                              </div>
+                            ))}
+                          </>
+                        ) : (
+                          <div 
+                            style={{
+                              fontSize: 'clamp(21px, 2.8vw, 34px)',
+                              fontWeight: '800',
+                              color: '#ffffff',
+                              lineHeight: '1.25',
+                              letterSpacing: '-0.5px',
+                              display: 'flex',
+                              alignItems: 'center',
+                              gap: '16px',
+                              fontFamily: "'Montserrat', sans-serif",
+                              animation: 'fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards',
+                              opacity: 0,
+                              transform: 'translateY(16px)'
+                            }}
+                          >
+                            <span style={{ 
+                              width: '8px', 
+                              height: '8px', 
+                              borderRadius: '50%', 
+                              backgroundColor: steps[activeStep].themeColor || '#b89047',
+                              display: 'inline-block',
+                              boxShadow: `0 0 12px ${steps[activeStep].themeColor || '#b89047'}`,
+                              flexShrink: 0
+                            }} />
+                            {intro}
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })()
+                ) : (
+                  <p style={{ whiteSpace: 'pre-line', margin: 0 }}>
+                    {steps[activeStep].description}
+                  </p>
+                )}
+              </div>
 
               {/* Key Points */}
               <div className="narrative-points-box">
@@ -276,14 +386,14 @@ export default function AboutSummary() {
 
         {/* Premium prominent CTA connected visually */}
         <div className="hero-about-button-box" style={{ marginTop: '70px', textAlign: 'center', display: 'flex', justifyContent: 'center' }}>
-          <Link 
-            to="#" 
-            onClick={(e) => { e.preventDefault(); navigate('/contact'); }} 
+          <Link
+            to="#"
+            onClick={(e) => { e.preventDefault(); navigate('/contact'); }}
             className="storyboard-cta-btn"
           >
             <span>Initiate Partner Consult</span>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ marginLeft: '10px', transition: 'transform 0.3s ease' }}>
-              <path d="M3 8H13M9 4L13 8L9 12" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M3 8H13M9 4L13 8L9 12" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </Link>
         </div>

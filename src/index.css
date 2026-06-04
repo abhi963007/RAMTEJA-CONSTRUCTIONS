@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@700;800&family=Montserrat:wght@700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@700;800&family=Montserrat:wght@400;500;700;800;900&display=swap');
 
 /* Global Font Overrides */
 :root {
@@ -40,7 +40,7 @@ body, html {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100%;
+  min-height: 100%;
 }
 
 .hero-title {
@@ -697,13 +697,40 @@ body, html {
   100% { transform: scale(1.10); }
 }
 
-.super-text-overlay {
-  animation: superFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+.super-text-overlay,
+.super-text-overlay *,
+.cinematic-line-span,
+.montserrat-font,
+.montserrat-font * {
+  font-family: 'Montserrat', sans-serif !important;
 }
 
-@keyframes superFadeIn {
-  0% { opacity: 0; transform: translateY(24px); filter: blur(4px); }
-  100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+.cinematic-line-wrapper {
+  overflow: hidden;
+  margin: 2px 0;
+  display: block;
+}
+
+.cinematic-line-span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100%) skewY(4deg);
+  filter: blur(8px);
+  animation: cinematicTextReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity, filter;
+}
+
+@keyframes cinematicTextReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(100%) skewY(4deg);
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) skewY(0);
+    filter: blur(0);
+  }
 }
 
 .telemetry-bar {
@@ -1718,3 +1745,57 @@ body {
     transform: translateY(0);
   }
 }
+
+/* Custom Mobile Responsive Overrides for Storyboard Player */
+@media screen and (max-width: 767px) {
+  .storyboard-display-screen {
+    aspect-ratio: 16 / 11.5 !important; /* Taller display screen on phones */
+  }
+  
+  .super-text-overlay {
+    font-size: clamp(14px, 4.2vw, 24px) !important;
+    line-height: 1.25 !important;
+    letter-spacing: 1.5px !important;
+    max-width: 90% !important;
+    padding: 0 12px !important;
+  }
+  
+  .storyboard-screen-controls {
+    padding: 10px 16px !important;
+    gap: 12px !important;
+    border-radius: 30px !important;
+  }
+  
+  .play-pause-btn {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  
+  .play-pause-btn svg {
+    width: 10px !important;
+    height: 10px !important;
+  }
+  
+  .storyboard-timeline {
+    gap: 10px !important;
+  }
+  
+  .timeline-segment-wrapper {
+    gap: 4px !important;
+  }
+  
+  .timeline-segment-wrapper .segment-label {
+    font-size: 10px !important;
+    letter-spacing: 0.5px !important;
+    text-align: center !important;
+  }
+  
+  .timeline-segment-wrapper .segment-label .step-name {
+    display: none !important; /* Hide step description on mobile to prevent overflow */
+  }
+  
+  .timeline-segment {
+    height: 3px !important;
+  }
+}
+
