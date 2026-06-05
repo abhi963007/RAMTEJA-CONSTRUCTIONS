@@ -66,16 +66,22 @@ export default function About() {
           {/* Vision Header Block - Two Columns */}
           <div className="vision-header-grid">
             <div className="vision-text-box reveal-on-scroll">
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '20px' }}>
+                <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#b89047' }}></div>
+                <h3 style={{ fontFamily: "'Montserrat', sans-serif", fontSize: '18px', fontWeight: '800', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#b89047', margin: 0 }}>
+                  Vision
+                </h3>
+              </div>
               <h2 className="choose-title" style={{ fontSize: 'clamp(34px, 4.5vw, 58px)', fontWeight: '900', fontFamily: "'Montserrat', sans-serif", margin: '16px 0 32px 0', lineHeight: '1.08', letterSpacing: '-0.03em', color: '#0c0c0c' }}>
                 Shape the future of urban India.
               </h2>
               <div className="description black" style={{ fontSize: '18px', lineHeight: '1.6', fontWeight: '600', marginBottom: '16px' }}>
                 Our vision is not simply to build more.
               </div>
-              <p className="description text-gray" style={{ fontSize: '17px', lineHeight: '1.75', marginBottom: '16px', fontFamily: "'Montserrat', sans-serif", fontWeight: '400', letterSpacing: '0.01em' }}>
+              <p className="description" style={{ fontSize: 'clamp(18px, 2.2vw, 24px)', lineHeight: '1.45', marginBottom: '24px', fontFamily: "'Manrope', sans-serif", fontWeight: '400', color: '#0c0c0c' }}>
                 As cities expand vertically and infrastructure demands grow increasingly complex, the need for disciplined, reliable, and execution-focused EPC partners has never been greater.
               </p>
-              <p className="description text-gray" style={{ fontSize: '17px', lineHeight: '1.75', fontFamily: "'Montserrat', sans-serif", fontWeight: '400', letterSpacing: '0.01em' }}>
+              <p className="description" style={{ fontSize: 'clamp(18px, 2.2vw, 24px)', lineHeight: '1.45', fontFamily: "'Manrope', sans-serif", fontWeight: '400', color: '#0c0c0c' }}>
                 Ramteja Constructions aims to be at the forefront of this transformation — delivering large-scale residential and township developments with engineering precision, operational excellence, and uncompromising execution standards.
               </p>
             </div>
@@ -144,7 +150,13 @@ export default function About() {
       {/* 6. Mission Section (Bento Grid Redesign) */}
       <section className="bento-section">
         <div className="container">
-          <div className="valus-title-box reveal-on-scroll" style={{ textAlign: 'center', marginBottom: '48px' }}>
+          <div className="valus-title-box reveal-on-scroll" style={{ textAlign: 'center', marginBottom: '48px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#b89047' }}></div>
+              <h3 style={{ fontFamily: "'Montserrat', sans-serif", fontSize: '18px', fontWeight: '800', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#b89047', margin: 0 }}>
+                Mission
+              </h3>
+            </div>
             <h3 className="valus-title" style={{ fontFamily: "'Playfair Display', 'Georgia', serif", fontSize: 'clamp(32px, 4.5vw, 48px)', fontWeight: '700', color: '#0c0c0c', margin: '0 auto', maxWidth: '800px', lineHeight: '1.2' }}>
               How vision is translated to execution
             </h3>
