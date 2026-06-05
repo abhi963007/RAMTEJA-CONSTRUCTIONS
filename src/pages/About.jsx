@@ -48,9 +48,9 @@ export default function About() {
                 <h1 className="about-hero-title">
                   Built on Trust, Precision, and Enduring Quality
                 </h1>
-                <div className="secondary-text black">
+                <p className="description" style={{ fontSize: 'clamp(18px, 2.2vw, 24px)', lineHeight: '1.45', fontFamily: "'Manrope', sans-serif", fontWeight: '400', color: '#0c0c0c' }}>
                   From high-rise residential towers to large-scale infrastructure developments, Ramteja Constructions delivers projects engineered for speed and crafted for a lasting legacy.
-                </div>
+                </p>
               </div>
             </div>
           </div>
