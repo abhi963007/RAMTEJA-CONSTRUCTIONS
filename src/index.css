@@ -3068,12 +3068,12 @@ body, html {
   object-fit: contain !important;
 }
 
-/* 6. Team Section Centering & Typography Overrides */
+/* 6. Team Section Left Alignment & Typography Overrides */
 .team-wrap {
   display: flex !important;
   flex-direction: column !important;
-  align-items: center !important;
-  text-align: center !important;
+  align-items: flex-start !important;
+  text-align: left !important;
   width: 100% !important;
 }
 
@@ -3084,9 +3084,9 @@ body, html {
   line-height: 1.2 !important;
   letter-spacing: -0.03em !important;
   color: #0c0c0c !important;
-  text-align: center !important;
-  margin: 0 auto 48px auto !important;
-  max-width: 720px !important;
+  text-align: left !important;
+  margin: 0 0 48px 0 !important;
+  max-width: 860px !important;
   display: block !important;
 }
 

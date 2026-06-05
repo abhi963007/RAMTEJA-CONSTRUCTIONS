@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import TeamSection from '../components/TeamSection';
 
@@ -33,8 +33,18 @@ export default function About() {
 
   return (
     <div className="about-page-react">
-      {/* Team Section */}
-      <TeamSection />
+      <style>{`
+        .section.inner-hero {
+          padding-top: clamp(160px, 12vw, 200px) !important;
+          padding-bottom: clamp(60px, 6vw, 90px) !important;
+        }
+        @media (max-width: 768px) {
+          .section.inner-hero {
+            padding-top: 140px !important;
+            padding-bottom: 40px !important;
+          }
+        }
+      `}</style>
 
       {/* 1. Inner Hero Section */}
       <section className="section inner-hero">
@@ -56,6 +66,9 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      {/* Team Section */}
+      <TeamSection />
 
       {/* 2. Vision Section */}
       <section className="section trust">
