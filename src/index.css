@@ -475,7 +475,6 @@ body, html {
   pointer-events: none !important;
   border: none !important;
 }
-
 .navbar {
   position: fixed !important;
   top: 0 !important;
@@ -485,27 +484,29 @@ body, html {
   padding-top: 8px !important;
   padding-bottom: 8px !important;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, border-color 0.3s ease !important;
+  background-color: transparent !important;
+  border-bottom: none !important;
 }
 
 .navbar.nav-top {
-  background-color: transparent !important;
-  border-bottom: 1px solid transparent !important;
   transform: translateY(0) !important;
+  background-color: transparent !important;
+  border-bottom: none !important;
 }
 
 .navbar.nav-scrolled {
-  background-color: rgba(10, 10, 12, 0.82) !important;
-  backdrop-filter: blur(16px) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
   transform: translateY(0) !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  background-color: transparent !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
 }
 
 .navbar.nav-hidden {
-  background-color: rgba(10, 10, 12, 0.82) !important;
-  backdrop-filter: blur(16px) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
   transform: translateY(-100%) !important;
+  background-color: transparent !important;
+  border-bottom: none !important;
+  backdrop-filter: none !important;
 }
 
 
@@ -640,6 +641,8 @@ body, html {
 @media screen and (min-width: 992px) {
   .nave-menu {
     padding: 5px 25px !important;
+    background-color: #000000 !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
   }
   .nav-menu-content.display-none {
     grid-column-gap: 20px !important;
@@ -652,14 +655,14 @@ body, html {
     padding: 10px 24px !important;
   }
   .nav-link.w-nav-link.w--current {
-    color: #b89047 !important;
+    color: #ffffff !important;
     background-color: transparent !important;
   }
   .nav-link.w-nav-link:hover {
     color: #ffffff !important;
   }
   .nav-link.w-nav-link.w--current:hover {
-    color: #b89047 !important;
+    color: #ffffff !important;
   }
 }
 

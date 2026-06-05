@@ -133,8 +133,7 @@ export default function Navbar() {
                 Home
               </NavLink>
               <NavLink
-                to="#"
-                onClick={(e) => e.preventDefault()}
+                to="/about"
                 onMouseEnter={(e) => updatePosition(e.currentTarget)}
                 className={({ isActive }) =>
                   `nav-link _2 white w-nav-link${isActive ? ' w--current' : ''}`
@@ -355,8 +354,8 @@ export default function Navbar() {
             Home
           </NavLink>
           <NavLink
-            to="#"
-            onClick={(e) => { e.preventDefault(); closeMenu(); }}
+            to="/about"
+            onClick={closeMenu}
             className={({ isActive }) =>
               `mobile-nav-link${isActive ? ' active' : ''}`
             }
