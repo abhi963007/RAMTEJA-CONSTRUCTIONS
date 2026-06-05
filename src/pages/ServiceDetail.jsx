@@ -876,25 +876,6 @@ export default function ServiceDetail() {
                   <path d="M2 7H12M12 7L8 3M12 7L8 11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </Link>
-              <Link
-                to="/services"
-                style={{
-                  fontFamily: "'Montserrat', sans-serif",
-                  fontSize: '12px',
-                  fontWeight: '700',
-                  letterSpacing: '0.08em',
-                  textTransform: 'uppercase',
-                  color: '#666',
-                  textDecoration: 'none',
-                  transition: 'color 0.2s ease',
-                  borderBottom: '1px solid rgba(102,102,102,0.2)',
-                  paddingBottom: '2px',
-                }}
-                onMouseEnter={(e) => { e.currentTarget.style.color = '#0c0c0c'; e.currentTarget.style.borderColor = '#0c0c0c'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.color = '#666'; e.currentTarget.style.borderColor = 'rgba(102,102,102,0.2)'; }}
-              >
-                &larr; Back to All Services
-              </Link>
             </div>
           </div>
         </section>

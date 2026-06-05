@@ -3063,6 +3063,9 @@ body, html {
 .social-box-team .social-icon-in,
 .social-box-team .social-icon-out {
   filter: brightness(0) invert(1) !important; /* Pure white social icons */
+  width: 12px !important;
+  height: 12px !important;
+  object-fit: contain !important;
 }
 
 /* 6. Team Section Centering & Typography Overrides */
