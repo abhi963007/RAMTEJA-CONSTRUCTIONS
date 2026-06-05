@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { servicesData } from '../data/servicesData';
 
@@ -174,6 +174,60 @@ const serviceExtraData = {
   }
 };
 
+const getCardIcon = (title) => {
+  const t = title.toLowerCase();
+  
+  // 1. Compliance / Shield / Certification Icon
+  if (t.includes('licensed') || t.includes('compliant') || t.includes('safety') || t.includes('certified') || t.includes('accredited')) {
+    return (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#b89047" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" className="choose-us-svg-path" style={{ transition: 'stroke 0.4s ease' }} />
+        <polyline points="9 11 11 13 15 9" className="choose-us-svg-path" style={{ transition: 'stroke 0.4s ease' }} />
+      </svg>
+    );
+  }
+  
+  // 2. Building / Portfolio / Corporate Icon
+  if (t.includes('portfolio') || t.includes('delivered') || t.includes('corporate') || t.includes('development')) {
+    return (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#b89047" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="4" y="2" width="16" height="20" rx="2" ry="2" className="choose-us-svg-path" style={{ transition: 'stroke 0.4s ease' }} />
+        <line x1="9" y1="22" x2="9" y2="16" className="choose-us-svg-path" style={{ transition: 'stroke 0.4s ease' }} />
+        <line x1="15" y1="22" x2="15" y2="16" className="choose-us-svg-path" style={{ transition: 'stroke 0.4s ease' }} />
+        <line x1="9" y1="16" x2="15" y2="16" className="choose-us-svg-path" style={{ transition: 'stroke 0.4s ease' }} />
+        <path d="M8 6h8M8 10h8" className="choose-us-svg-path" style={{ transition: 'stroke 0.4s ease' }} />
+      </svg>
+    );
+  }
+  
+  // 3. Materials / Leaf / Supply / Green Icon
+  if (t.includes('materials') || t.includes('eco') || t.includes('vetted') || t.includes('pipeline')) {
+    return (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#b89047" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.5 0 9.5a7 7 0 0 1-8 8.5z" className="choose-us-svg-path" style={{ transition: 'stroke 0.4s ease' }} />
+        <path d="M19 2L11 10" className="choose-us-svg-path" style={{ transition: 'stroke 0.4s ease' }} />
+      </svg>
+    );
+  }
+  
+  // 4. Engineering / Gears / Hardhat / Technical Icon
+  if (t.includes('engineering') || t.includes('team') || t.includes('tolerances') || t.includes('controls') || t.includes('hvac')) {
+    return (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#b89047" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" className="choose-us-svg-path" style={{ transition: 'stroke 0.4s ease' }} />
+      </svg>
+    );
+  }
+  
+  // 5. Workflow / Clock / Checklist / Timeline Icon (Default fallback)
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#b89047" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10" className="choose-us-svg-path" style={{ transition: 'stroke 0.4s ease' }} />
+      <polyline points="12 6 12 12 16 14" className="choose-us-svg-path" style={{ transition: 'stroke 0.4s ease' }} />
+    </svg>
+  );
+};
+
 export default function ServiceDetail() {
   const { slug } = useParams();
   const revealRefs = useRef([]);
@@ -323,7 +377,7 @@ export default function ServiceDetail() {
             </div>
             
             {/* Hero Main Visual */}
-            <div className="projects-details-image-wrapper" style={{ width: '100%', height: '560px', overflow: 'hidden', border: '1px solid rgba(0,0,0,0.08)', position: 'relative' }}>
+            <div className="projects-details-image-wrapper" style={{ width: '100%', aspectRatio: '16 / 9', height: 'auto', maxHeight: '560px', overflow: 'hidden', borderRadius: '16px', border: '1px solid rgba(0,0,0,0.08)', position: 'relative' }}>
               <img
                 src={service.heroImage}
                 alt={`${service.pageTitle} Construction`}
@@ -500,17 +554,15 @@ export default function ServiceDetail() {
             <div className="choose-us-top-content">
               <div className="choose-us-top-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '32px' }}>
                 {extra.chooseUs.cards.slice(0, 3).map((card, idx) => (
-                  <div key={idx} className="services-choose-us-card" style={{ display: 'flex', flexDirection: 'column', gap: '20px', padding: '36px', border: '1px solid rgba(184, 144, 71, 0.08)', backgroundColor: 'rgba(255, 255, 255, 0.45)', backdropFilter: 'blur(10px)', borderRadius: '12px', transition: 'all 0.5s cubic-bezier(0.16,1,0.3,1)' }}>
-                    <div className="services-choose-us-icon-wrapper" style={{ width: '48px', height: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(184, 144, 71, 0.08)', border: '1px solid rgba(184, 144, 71, 0.15)', borderRadius: '50%', transition: 'all 0.5s cubic-bezier(0.16,1,0.3,1)' }}>
-                      <svg className="choose-us-check-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b89047" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transition: 'stroke 0.4s ease' }}>
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
+                  <div key={idx} className="services-choose-us-card">
+                    <div className="services-choose-us-icon-wrapper">
+                      {getCardIcon(card.title)}
                     </div>
                     <div className="services-choose-us-card-typography" style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                      <div className="services-choose-us-card-title" style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: '800', fontSize: '17px', color: '#0c0c0c' }}>
+                      <div className="services-choose-us-card-title">
                         {card.title}
                       </div>
-                      <p className="services-choose-us-card-description" style={{ fontFamily: "'Elms Sans', sans-serif", fontSize: '13.5px', lineHeight: '1.65', color: '#666', margin: 0, textAlign: 'justify' }}>
+                      <p className="services-choose-us-card-description">
                         {card.description}
                       </p>
                     </div>
@@ -520,7 +572,7 @@ export default function ServiceDetail() {
             </div>
 
             {/* Center Visual Banner */}
-            <div className="services-choose-us-image-wrapper" style={{ width: '100%', height: '420px', overflow: 'hidden', border: '1px solid rgba(0,0,0,0.08)', position: 'relative' }}>
+            <div className="services-choose-us-image-wrapper" style={{ width: '100%', aspectRatio: '21 / 9', height: 'auto', maxHeight: '420px', overflow: 'hidden', borderRadius: '16px', border: '1px solid rgba(0,0,0,0.08)', position: 'relative' }}>
               <img
                 src={extra.centerImage}
                 alt="Construction execution quality"
@@ -538,17 +590,15 @@ export default function ServiceDetail() {
             <div className="choose-us-bottom-card-wrapper">
               <div className="choose-us-bottom-card-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px' }}>
                 {extra.chooseUs.cards.slice(3, 5).map((card, idx) => (
-                  <div key={idx} className="services-choose-us-card" style={{ display: 'flex', flexDirection: 'column', gap: '20px', padding: '36px', border: '1px solid rgba(184, 144, 71, 0.08)', backgroundColor: 'rgba(255, 255, 255, 0.45)', backdropFilter: 'blur(10px)', borderRadius: '12px', transition: 'all 0.5s cubic-bezier(0.16,1,0.3,1)' }}>
-                    <div className="services-choose-us-icon-wrapper" style={{ width: '48px', height: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(184, 144, 71, 0.08)', border: '1px solid rgba(184, 144, 71, 0.15)', borderRadius: '50%', transition: 'all 0.5s cubic-bezier(0.16,1,0.3,1)' }}>
-                      <svg className="choose-us-check-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b89047" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transition: 'stroke 0.4s ease' }}>
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
+                  <div key={idx} className="services-choose-us-card">
+                    <div className="services-choose-us-icon-wrapper">
+                      {getCardIcon(card.title)}
                     </div>
                     <div className="services-choose-us-card-typography" style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                      <div className="services-choose-us-card-title" style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: '800', fontSize: '17px', color: '#0c0c0c' }}>
+                      <div className="services-choose-us-card-title">
                         {card.title}
                       </div>
-                      <p className="services-choose-us-card-description" style={{ fontFamily: "'Elms Sans', sans-serif", fontSize: '13.5px', lineHeight: '1.65', color: '#666', margin: 0, textAlign: 'justify' }}>
+                      <p className="services-choose-us-card-description">
                         {card.description}
                       </p>
                     </div>
@@ -690,7 +740,7 @@ export default function ServiceDetail() {
                   <div key={idx} className="results-card-wrapper" style={{
                     display: 'flex',
                     flexDirection: 'column',
-                    padding: '12px',
+                    padding: '0',
                     backgroundColor: 'rgba(255, 255, 255, 0.45)',
                     backdropFilter: 'blur(10px)',
                     border: '1px solid rgba(184, 144, 71, 0.08)',
@@ -703,7 +753,6 @@ export default function ServiceDetail() {
                       width: '100%',
                       height: '340px',
                       overflow: 'hidden',
-                      borderRadius: '12px',
                       position: 'relative'
                     }}>
                       <img
@@ -925,20 +974,93 @@ export default function ServiceDetail() {
           transform: rotate(360deg);
         }
 
-        /* Choose us card hover micro-animations */
+        /* Premium Choose Us Cards Default & Hover States */
+        .services-choose-us-card {
+          position: relative !important;
+          background: #ffffff !important;
+          border: 1px solid rgba(184, 144, 71, 0.08) !important;
+          border-radius: 16px !important;
+          padding: 36px 32px !important;
+          display: flex !important;
+          flex-direction: column !important;
+          gap: 24px !important;
+          transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+          box-shadow: 
+            0 10px 30px -10px rgba(12, 12, 12, 0.04), 
+            0 1px 3px rgba(12, 12, 12, 0.02) !important;
+          overflow: hidden !important;
+        }
+
+        .services-choose-us-card::before {
+          content: '' !important;
+          position: absolute !important;
+          top: 0 !important;
+          left: 0 !important;
+          width: 100% !important;
+          height: 3px !important;
+          background: linear-gradient(90deg, #b89047 0%, #d1ab66 100%) !important;
+          opacity: 0 !important;
+          transition: opacity 0.4s ease !important;
+        }
+
+        .services-choose-us-card:hover::before {
+          opacity: 1 !important;
+        }
+
         .services-choose-us-card:hover {
           transform: translateY(-8px) !important;
-          background-color: rgba(255, 255, 255, 0.95) !important;
-          border-color: #b89047 !important;
-          box-shadow: 0 20px 40px rgba(184, 144, 71, 0.08) !important;
+          border-color: rgba(184, 144, 71, 0.3) !important;
+          box-shadow: 
+            0 30px 60px -15px rgba(184, 144, 71, 0.12),
+            0 0 0 1px rgba(184, 144, 71, 0.1) !important;
         }
+
+        .services-choose-us-icon-wrapper {
+          width: 52px !important;
+          height: 52px !important;
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          background: rgba(184, 144, 71, 0.06) !important;
+          border: 1px solid rgba(184, 144, 71, 0.15) !important;
+          border-radius: 12px !important;
+          transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        }
+
         .services-choose-us-card:hover .services-choose-us-icon-wrapper {
-          background-color: #b89047 !important;
+          background: #b89047 !important;
           border-color: #b89047 !important;
-          transform: rotate(360deg);
+          transform: scale(1.05) rotate(5deg) !important;
         }
-        .services-choose-us-card:hover .choose-us-check-svg {
+
+        .services-choose-us-card:hover .choose-us-svg-path {
           stroke: #ffffff !important;
+        }
+
+        .services-choose-us-card-title {
+          font-family: 'Montserrat', sans-serif !important;
+          font-weight: 800 !important;
+          font-size: 18px !important;
+          color: #0c0c0c !important;
+          transition: color 0.3s ease !important;
+        }
+
+        .services-choose-us-card:hover .services-choose-us-card-title {
+          color: #b89047 !important;
+        }
+
+        .services-choose-us-card-description {
+          font-family: 'Inter', sans-serif !important;
+          font-size: 13.5px !important;
+          line-height: 1.7 !important;
+          color: #555555 !important;
+          margin: 0 !important;
+          text-align: justify !important;
+          transition: color 0.3s ease !important;
+        }
+
+        .services-choose-us-card:hover .services-choose-us-card-description {
+          color: #333333 !important;
         }
 
         /* Timeline bullet transitions */
@@ -1016,10 +1138,12 @@ export default function ServiceDetail() {
             height: 300px !important;
           }
           .projects-details-image-wrapper {
-            height: 320px !important;
+            aspect-ratio: 16 / 9 !important;
+            height: auto !important;
           }
           .services-choose-us-image-wrapper {
-            height: 280px !important;
+            aspect-ratio: 16 / 9 !important;
+            height: auto !important;
           }
           .project-working-process-list-item {
             padding-left: 48px;
