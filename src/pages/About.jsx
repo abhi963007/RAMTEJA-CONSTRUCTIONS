@@ -141,94 +141,249 @@ export default function About() {
         </div>
       </section>
 
-      {/* 6. Mission Section */}
-      <section className="section values">
-        <div data-w-id="a6f0b2bd-759a-6690-f691-dd9ad5292575" className="testimonial-vh">
-          <div className="testimonial-sticky">
-            <div className="container">
-              <div className="valus-title-box reveal-on-scroll">
-                <h3 data-w-id="edc51ca1-960d-a470-a623-4d98069df25e" style={{ opacity: 0 }} className="valus-title">
-                  How vision is translated to execution
-                </h3>
+      {/* 6. Mission Section (Bento Grid Redesign) */}
+      <section className="bento-section">
+        <div className="container">
+          <div className="valus-title-box reveal-on-scroll" style={{ textAlign: 'center', marginBottom: '48px' }}>
+            <h3 className="valus-title" style={{ fontFamily: "'Playfair Display', 'Georgia', serif", fontSize: 'clamp(32px, 4.5vw, 48px)', fontWeight: '700', color: '#0c0c0c', margin: '0 auto', maxWidth: '800px', lineHeight: '1.2' }}>
+              How vision is translated to execution
+            </h3>
+          </div>
+          
+          <div className="bento-grid">
+            {/* Column 1 */}
+            <div className="bento-column bento-col-1">
+              <div className="bento-card text-card reveal-on-scroll" style={{ transitionDelay: '0.1s' }}>
+                <div className="bento-card-title">Engineering Excellence</div>
+                <div className="bento-card-line"></div>
+                <div className="bento-card-desc">
+                  We uphold rigorous engineering and construction standards across every stage of project execution, from planning to handover.
+                </div>
               </div>
-              <div className="values-wrap">
-                <div className="values-single-card reveal-on-scroll" style={{ transitionDelay: '0.1s' }}>
-                  <div className="values-inner-top-box">
-                    <div className="values-inner-title">
-                      Engineering Excellence
-                    </div>
-                  </div>
-                  <div className="values-inner-bottom-box">
-                    <div className="description gray">
-                      We uphold rigorous engineering and construction standards across every stage of project execution, from planning to handover.
-                    </div>
-                  </div>
+              <div className="bento-card image-card reveal-on-scroll" style={{ transitionDelay: '0.2s', height: '420px' }}>
+                <img src="/images/service_residential.png" alt="Engineering Excellence" />
+              </div>
+            </div>
+
+            {/* Column 2 */}
+            <div className="bento-column bento-col-2">
+              <div className="bento-card image-card reveal-on-scroll" style={{ transitionDelay: '0.15s', height: '200px' }}>
+                <img src="/images/value_precision.png" alt="Precision construction" />
+              </div>
+              <div className="bento-card image-card reveal-on-scroll" style={{ transitionDelay: '0.25s', height: '200px' }}>
+                <img src="/images/value_structure.png" alt="Steel structures" />
+              </div>
+              <div className="bento-card text-card reveal-on-scroll" style={{ transitionDelay: '0.35s' }}>
+                <div className="bento-card-title">Safety & Compliance</div>
+                <div className="bento-card-line"></div>
+                <div className="bento-card-desc">
+                  We prioritize workforce safety, regulatory compliance, and disciplined site management across all projects and operations.
                 </div>
-                <div className="values-single-card card-two reveal-on-scroll" style={{ transitionDelay: '0.2s' }}>
-                  <div className="values-inner-top-box">
-                    <div className="values-inner-title">
-                      Time Discipline
-                    </div>
-                  </div>
-                  <div className="values-inner-bottom-box">
-                    <div className="description gray">
-                      We maintain structured execution systems designed to improve predictability, accelerate delivery cycles, and minimize delays.
-                    </div>
-                  </div>
+              </div>
+            </div>
+
+            {/* Column 3 */}
+            <div className="bento-column bento-col-3">
+              <div className="bento-card text-card reveal-on-scroll" style={{ transitionDelay: '0.1s' }}>
+                <div className="bento-card-title">Time Discipline</div>
+                <div className="bento-card-line"></div>
+                <div className="bento-card-desc">
+                  We maintain structured execution systems designed to improve predictability, accelerate delivery cycles, and minimize delays.
                 </div>
-                <div className="values-single-card card-three reveal-on-scroll" style={{ transitionDelay: '0.3s' }}>
-                  <div className="values-inner-top-box">
-                    <div className="values-inner-title">
-                      Cost Efficiency
-                    </div>
-                  </div>
-                  <div className="values-inner-bottom-box">
-                    <div className="description gray">
-                      Our integrated in-house execution model enables stronger operational control, optimized procurement, and efficient resource deployment.
-                    </div>
-                  </div>
+              </div>
+              <div className="bento-card text-card reveal-on-scroll" style={{ transitionDelay: '0.2s' }}>
+                <div className="bento-card-title">Cost Efficiency</div>
+                <div className="bento-card-line"></div>
+                <div className="bento-card-desc">
+                  Our integrated in-house execution model enables stronger operational control, optimized procurement, and efficient resource deployment.
                 </div>
-                <div className="values-single-card card-four reveal-on-scroll" style={{ transitionDelay: '0.4s' }}>
-                  <div className="values-inner-top-box">
-                    <div className="values-inner-title">
-                      Safety & Compliance
-                    </div>
-                  </div>
-                  <div className="values-inner-bottom-box">
-                    <div className="description gray">
-                      We prioritize workforce safety, regulatory compliance, and disciplined site management across all projects and operations.
-                    </div>
-                  </div>
+              </div>
+              <div className="bento-card image-card reveal-on-scroll" style={{ transitionDelay: '0.3s', height: '220px' }}>
+                <img src="/images/699ad48a6eda4aba3f460beb_Common Img 4.webp" alt="Resource optimization" />
+              </div>
+            </div>
+
+            {/* Column 4 */}
+            <div className="bento-column bento-col-4">
+              <div className="bento-card image-card reveal-on-scroll" style={{ transitionDelay: '0.15s', height: '380px' }}>
+                <img src="/images/value_reliability.png" alt="Disciplined execution" />
+              </div>
+              <div className="bento-card image-card reveal-on-scroll" style={{ transitionDelay: '0.25s', height: '220px' }}>
+                <img src="/images/699ad4296d0caee63d801419_Common Img 1.webp" alt="Workforce ecosystem" />
+              </div>
+            </div>
+
+            {/* Column 5 */}
+            <div className="bento-column bento-col-5">
+              <div className="bento-card text-card reveal-on-scroll" style={{ transitionDelay: '0.1s' }}>
+                <div className="bento-card-title">Workforce Capability</div>
+                <div className="bento-card-line"></div>
+                <div className="bento-card-desc">
+                  We continue to strengthen our engineering, technical, and labour ecosystem to support increasingly complex and large-scale developments.
                 </div>
-                <div className="values-single-card card-five reveal-on-scroll" style={{ transitionDelay: '0.5s' }}>
-                  <div className="values-inner-top-box">
-                    <div className="values-inner-title">
-                      Workforce Capability
-                    </div>
-                  </div>
-                  <div className="values-inner-bottom-box">
-                    <div className="description gray">
-                      We continue to strengthen our engineering, technical, and labour ecosystem to support increasingly complex and large-scale developments.
-                    </div>
-                  </div>
-                </div>
-                <div className="values-single-card card-six reveal-on-scroll" style={{ transitionDelay: '0.6s' }}>
-                  <div className="values-inner-top-box">
-                    <div className="values-inner-title">
-                      Long-Term Partnerships
-                    </div>
-                  </div>
-                  <div className="values-inner-bottom-box">
-                    <div className="description gray">
-                      We focus on building lasting relationships grounded in trust, transparency, accountability, and consistent execution performance.
-                    </div>
-                  </div>
+              </div>
+              <div className="bento-card image-card reveal-on-scroll" style={{ transitionDelay: '0.2s', height: '220px' }}>
+                <img src="/images/service_commercial.png" alt="Commercial build" />
+              </div>
+              <div className="bento-card text-card reveal-on-scroll" style={{ transitionDelay: '0.3s' }}>
+                <div className="bento-card-title">Long-Term Partnerships</div>
+                <div className="bento-card-line"></div>
+                <div className="bento-card-desc">
+                  We focus on building lasting relationships grounded in trust, transparency, accountability, and consistent execution performance.
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Bento Grid Scoped Styles */}
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+        .bento-section {
+          padding: 100px 0 120px 0;
+          background-color: #faf9f6;
+          overflow: hidden;
+        }
+
+        .bento-grid {
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
+          gap: 20px;
+          width: 100%;
+        }
+
+        .bento-column {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+
+        /* Bento Cards */
+        .bento-card {
+          border-radius: 16px;
+          overflow: hidden;
+          background-color: #ffffff;
+          border: 1px solid rgba(0, 0, 0, 0.05);
+          box-shadow: 0 4px 24px rgba(0, 0, 0, 0.02);
+          transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                      box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                      border-color 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+          will-change: transform, box-shadow;
+        }
+
+        .bento-card.text-card {
+          padding: 36px 28px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-start;
+          flex: 1;
+        }
+
+        .bento-card.image-card {
+          position: relative;
+          cursor: pointer;
+        }
+
+        .bento-card.image-card img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+          transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Hover animations */
+        .bento-card.text-card:hover {
+          transform: translateY(-6px);
+          border-color: rgba(184, 144, 71, 0.25);
+          box-shadow: 0 15px 35px rgba(184, 144, 71, 0.08);
+        }
+
+        .bento-card.image-card:hover img {
+          transform: scale(1.06);
+        }
+
+        .bento-card.image-card:hover {
+          transform: translateY(-6px);
+          box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Text styling inside card */
+        .bento-card-title {
+          font-family: 'Playfair Display', 'Georgia', serif;
+          font-size: 21px;
+          font-weight: 700;
+          color: #0c0c0c;
+          margin-bottom: 8px;
+          line-height: 1.25;
+          letter-spacing: -0.01em;
+        }
+
+        .bento-card-line {
+          width: 28px;
+          height: 2px;
+          background-color: #b89047;
+          margin-bottom: 16px;
+        }
+
+        .bento-card-desc {
+          font-family: 'Inter', sans-serif;
+          font-size: 13.5px;
+          line-height: 1.65;
+          color: #666666;
+          text-align: justify;
+        }
+
+        /* Responsive Layouts */
+        @media (max-width: 991px) {
+          .bento-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+
+        @media (max-width: 767px) {
+          .bento-section {
+            padding: 60px 0 80px 0;
+          }
+          .bento-grid {
+            grid-template-columns: 1fr;
+            gap: 16px;
+          }
+          .bento-column {
+            gap: 16px;
+          }
+          .bento-card.image-card {
+            height: 280px !important;
+          }
+          .bento-card.text-card {
+            padding: 28px 24px;
+          }
+        }
+
+        /* Section-wise Scroll Reveal custom behaviors */
+
+        /* Commitment Section custom image slide overlay reveal */
+        .image-wrap.reveal-on-scroll {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+        .image-wrap .view-image-overlay {
+          background-color: #ffffff !important;
+          width: 100% !important;
+          height: 100% !important;
+          position: absolute !important;
+          inset: 100% 0% 0% !important;
+          transform: translate3d(0, -100%, 0) !important;
+          transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+          z-index: 2 !important;
+        }
+        .image-wrap.is-visible .view-image-overlay {
+          transform: translate3d(0, 0%, 0) !important;
+        }
+      `}</style>
 
       {/* 3. Brand Section */}
       <section className="section brand brand-ticker-section" style={{ paddingTop: '56px', paddingBottom: '0px' }}>
@@ -308,10 +463,10 @@ export default function About() {
         <div className="container">
           <div className="commitment-wrap">
             <div className="commitment-left-box">
-              <h3 data-w-id="48110768-39ef-bc50-5d0b-dbae3cc3aab4" style={{ opacity: 0 }} className="commitment-title">
+              <h3 className="commitment-title reveal-on-scroll slide-left" style={{ transitionDelay: '0.1s' }}>
                 We are committed to delivering high-quality constructions, investing in advanced engineering tools, continuous technical training, strict safety compliance, transparent stakeholder communication, and on-time project handovers to protect your investment and exceed expectations always.
               </h3>
-              <div data-w-id="69dd8f71-3198-88cc-b2fc-278268174999" style={{ opacity: 0 }} className="commitment-button-box">
+              <div className="commitment-button-box reveal-on-scroll slide-left" style={{ transitionDelay: '0.2s' }}>
                 <Link to="/contact" className="primary-button w-inline-block">
                   <div className="primary-button-text-wrap">
                     <div className="primary-button-text">
@@ -325,23 +480,14 @@ export default function About() {
               </div>
             </div>
             <div className="commitment-right-box">
-              <div data-w-id="fc8c7e5f-d2d0-ad38-7b78-2087f2875a7f" className="image-wrap radius">
+              <div className="image-wrap radius reveal-on-scroll" style={{ transitionDelay: '0.25s' }}>
                 <img 
                   alt="Commitment to Excellence" 
                   src="/images/value_structure.png" 
                   loading="lazy" 
                   className="view-image radius-tweenty" 
                 />
-                <div 
-                  style={{
-                    WebkitTransform: 'translate3d(0, -100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)',
-                    MozTransform: 'translate3d(0, -100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)',
-                    msTransform: 'translate3d(0, -100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)',
-                    transform: 'translate3d(0, -100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)'
-                  }} 
-                  className="view-image-overlay"
-                >
-                </div>
+                <div className="view-image-overlay" />
               </div>
             </div>
           </div>
