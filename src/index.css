@@ -2435,3 +2435,745 @@ body, html {
   transform: translateX(4px) !important;
 }
 
+/* Custom Team Social Box Hover Animations - Perfectly Centered */
+.social-box-team .social-icon-in {
+  transition: transform 0.3s ease, opacity 0.3s ease !important;
+  transform: translateY(0) !important;
+}
+.social-box-team .social-icon-out {
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, 50%) !important; /* Centered horizontally, offset vertically below */
+  transition: transform 0.3s ease, opacity 0.3s ease !important;
+  opacity: 0 !important;
+}
+.social-box-team:hover .social-icon-in {
+  transform: translateY(-100%) !important;
+  opacity: 0 !important;
+}
+.social-box-team:hover .social-icon-out {
+  transform: translate(-50%, -50%) !important; /* Centered horizontally and vertically on hover */
+  opacity: 1 !important;
+}
+
+/* Vision Header Two-Column Grid Styles */
+/* Premium Scroll Reveal Animation System */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 1.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Subtle divider line between sections */
+.vision-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(184, 144, 71, 0.15) 50%, transparent) !important;
+  margin-bottom: clamp(30px, 3vw, 40px) !important;
+}
+
+/* 1. Inner Hero Section Updates */
+.section.inner-hero {
+  padding-top: clamp(60px, 6vw, 90px) !important; /* Reduced excessive top spacing */
+  padding-bottom: clamp(20px, 2vw, 30px) !important;
+  background-color: #faf9f6 !important; /* Premium warm plaster canvas */
+  background-image: 
+    radial-gradient(circle at 50% -10%, rgba(244, 230, 200, 0.45) 0%, transparent 65%), /* Warm gradient depth */
+    linear-gradient(rgba(0, 0, 0, 0.012) 1px, transparent 1px), /* Architectural grid */
+    linear-gradient(90deg, rgba(0, 0, 0, 0.012) 1px, transparent 1px) !important;
+  background-size: 100% 100%, 45px 45px, 45px 45px !important;
+  background-position: center top !important;
+}
+
+.hero-gold-accent {
+  font-family: 'Manrope', sans-serif !important;
+  color: #b89047 !important; /* Brand gold */
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  margin-bottom: 16px !important;
+}
+
+.about-hero-wrap {
+  max-width: 900px !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+.about-hero-title {
+  max-width: 100% !important;
+  text-align: center !important;
+  font-size: clamp(32px, 4.5vw, 54px) !important;
+  line-height: 1.1 !important; /* Tighter heading line-height */
+  letter-spacing: -0.03em !important;
+  color: #0c0c0c !important; /* Rich contrast black */
+  margin-bottom: 24px !important;
+  font-weight: 800 !important;
+}
+
+.about-hero-wrap .secondary-text.black {
+  text-align: center !important;
+  font-size: 17px !important;
+  line-height: 1.7 !important;
+  max-width: 680px !important; /* Optimal paragraph width and readability */
+  color: #3d3d3d !important;
+  margin: 0 auto !important;
+}
+
+/* 2. Vision Section Updates */
+.section.trust {
+  padding-top: clamp(30px, 3vw, 45px) !important;
+  padding-bottom: clamp(80px, 8vw, 120px) !important;
+  background-color: #faf9f6 !important; /* Consistent plaster background */
+  background-image: 
+    radial-gradient(circle at 80% 90%, rgba(244, 230, 200, 0.25) 0%, transparent 60%),
+    linear-gradient(rgba(0, 0, 0, 0.012) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.012) 1px, transparent 1px) !important;
+  background-size: 100% 100%, 45px 45px, 45px 45px !important;
+  background-position: center top !important;
+}
+
+/* Premium Glass / Pill badge styling for all About page sub-titles (Vision, Team, Mission, Choose Us) */
+.about-page-react .section-sub-title {
+  background: rgba(255, 255, 255, 0.65) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(184, 144, 71, 0.28) !important; /* Premium gold border */
+  color: #b89047 !important;
+  padding: 8px 22px !important;       /* Larger padding for better visibility */
+  font-weight: 700 !important;
+  font-size: 12.5px !important;        /* Increased font size for prominence */
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  border-radius: 100px !important;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.04) !important;
+  margin-bottom: 24px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  width: fit-content !important;       /* Prevent full-width stretch */
+  align-self: center !important;       /* Centered by default */
+}
+
+/* Scoped alignments for different section pill layouts */
+.vision-text-box .section-sub-title {
+  align-self: flex-start !important;   /* Stick to left edge for asymmetric layout */
+}
+
+.team-wrap .section-sub-title,
+.valus-title-box .section-sub-title,
+.choose .valus-title-box .section-sub-title {
+  margin: 0 auto 24px auto !important;
+  align-self: center !important;
+}
+
+.vision-header-grid {
+  display: grid !important;
+  grid-template-columns: 1.2fr 0.8fr !important; /* More space for text column */
+  gap: 56px !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+
+.vision-text-box {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  padding-right: 24px !important;
+}
+
+/* Vision heading — large editorial display size */
+.vision-text-box .choose-title {
+  font-size: clamp(44px, 5.5vw, 78px) !important;
+  line-height: 1.06 !important;
+  letter-spacing: -0.035em !important;
+  color: #0c0c0c !important;
+  font-weight: 800 !important;
+  margin: 16px 0 36px 0 !important;
+}
+
+/* Other sections keep the smaller choose-title */
+.choose-title {
+  font-size: clamp(28px, 3.2vw, 44px) !important;
+  line-height: 1.12 !important;
+  letter-spacing: -0.03em !important;
+  color: #0c0c0c !important;
+  font-weight: 800 !important;
+}
+
+.vision-text-box .description.black {
+  font-size: 18px !important;
+  line-height: 1.6 !important;
+  color: #2d2d2d !important;
+  margin-bottom: 16px !important;
+}
+
+.vision-text-box .description.text-gray {
+  font-size: 15px !important;
+  line-height: 1.7 !important;
+  color: #555555 !important;
+  max-width: 600px !important;
+  margin-bottom: 20px !important;
+}
+
+/* Vision Image Box (Layered shadow + overlaps + zoom + cinematic lights) */
+.vision-image-box {
+  display: flex !important;
+  align-items: stretch !important;
+  border-radius: 28px !important; /* Cleaner rounded corners */
+  overflow: hidden !important;
+  position: relative !important;
+  border: 1px solid rgba(0, 0, 0, 0.06) !important; /* Soft border */
+  box-shadow: 
+    0 10px 30px -10px rgba(0,0,0,0.1), 
+    0 40px 80px -25px rgba(0,0,0,0.15),
+    0 0 0 1px rgba(0,0,0,0.02) !important; /* Layered ambient shadow */
+  z-index: 2;
+  margin-left: -32px !important; /* Asymmetric layout overlap */
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Cinematic lighting overlay */
+.vision-image-box::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 235, 200, 0.12) 0%, transparent 60%, rgba(0, 0, 0, 0.2) 100%) !important;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.vision-image-box img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+  transition: transform 1.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.vision-image-box:hover img {
+  transform: scale(1.05) !important; /* Subtle hover zoom */
+}
+
+@media screen and (max-width: 991px) {
+  .vision-header-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+    align-items: stretch !important;
+  }
+  .vision-image-box {
+    margin-left: 0 !important; /* Remove overlap on mobile */
+    height: 350px !important;
+  }
+  .vision-text-box {
+    padding-right: 0 !important;
+  }
+}
+
+/* 3. Card Grid ("What we stand for") Styling */
+.trust-single-card {
+  position: relative !important;
+  overflow: hidden !important;
+  border-radius: 28px !important; /* Cleaner rounded corners 24px-32px */
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  height: 400px !important;
+  padding: 0 !important;
+  box-shadow: 
+    0 10px 30px -10px rgba(0,0,0,0.1), 
+    0 40px 80px -25px rgba(0,0,0,0.15),
+    0 0 0 1px rgba(0,0,0,0.02) !important; /* Ambient drop-shadow */
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.trust-single-card:hover {
+  transform: translateY(-6px) !important;
+  border-color: rgba(184, 144, 71, 0.35) !important; /* Gold border hover highlight */
+  box-shadow: 
+    0 15px 35px -10px rgba(0,0,0,0.15), 
+    0 50px 90px -25px rgba(0,0,0,0.25),
+    0 0 0 1px rgba(184, 144, 71, 0.1) !important;
+}
+
+/* Background image box filling card */
+.trust-image-box {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 0 !important;
+  overflow: hidden !important;
+  z-index: 1 !important;
+}
+
+.trust-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  transition: transform 1.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  display: block !important;
+}
+
+.trust-single-card:hover .trust-image {
+  transform: scale(1.06) !important; /* Subtle slow hover zoom */
+}
+
+/* Linear gradient overlay for high contrast text readability */
+.trust-single-card::after {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.82) 100%) !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+}
+
+/* Text overlay content container */
+.trust-content-box {
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  padding: 32px 24px !important;
+  z-index: 3 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  box-sizing: border-box !important;
+  text-align: left !important;
+}
+
+/* Elms Sans font overlay headings */
+.trust-content-box .secondary-text.black {
+  font-family: 'Elms Sans', sans-serif !important;
+  color: #ffffff !important; /* White text on dark gradient background */
+  font-weight: 700 !important;
+  font-size: 20px !important;
+  margin: 0 !important;
+}
+
+/* Elms Sans font overlay descriptions */
+.trust-content-box .description.text-gray {
+  font-family: 'Elms Sans', sans-serif !important;
+  color: rgba(255, 255, 255, 0.8) !important; /* Light description text */
+  font-size: 13.5px !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+  text-align: justify !important;
+}
+
+/* Mission Section Cards Styling (Uniform with What We Stand For) */
+.values-single-card {
+  background: rgba(255, 255, 255, 0.62) !important;
+  background-image: 
+    linear-gradient(rgba(184, 144, 71, 0.015) 1px, transparent 1px), 
+    linear-gradient(90deg, rgba(184, 144, 71, 0.015) 1px, transparent 1px),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.75) 0%, rgba(252, 249, 245, 0.52) 100%) !important;
+  background-size: 24px 24px, 24px 24px, 100% 100% !important;
+  background-position: center !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  border-radius: 28px !important; /* Match cleaner rounded corners */
+  padding: 38px 28px !important;    /* Increased padding for premium architectural layout */
+  box-shadow: 0 20px 50px rgba(0,0,0,0.06), 0 0 1px rgba(0,0,0,0.08) !important;
+  position: relative !important;
+  top: 0 !important;
+  overflow: hidden !important;
+  transition: top 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease, background 0.4s ease !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  gap: 16px !important;             /* Increased gap for better text breathing room */
+  height: auto !important;
+  min-height: 250px !important;     /* Reduced min-height slightly since numbers are removed */
+}
+
+/* Glass reflection shimmer effect overlay */
+.values-single-card::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -150% !important;
+  width: 120% !important;
+  height: 100% !important;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.18) 30%,
+    rgba(255, 255, 255, 0.35) 50%,
+    rgba(255, 255, 255, 0.18) 70%,
+    transparent 100%
+  ) !important;
+  transform: skewX(-25deg) !important;
+  transition: none !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+
+.values-single-card:hover::before {
+  left: 150% !important;
+  transition: left 1.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.values-single-card:hover {
+  top: -8px !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.09), 0 0 35px rgba(184, 144, 71, 0.14) !important;
+  border-color: rgba(184, 144, 71, 0.28) !important;
+}
+
+.values-inner-top-box,
+.values-inner-bottom-box {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* Mission Section Title Styling */
+.valus-title {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: clamp(28px, 3.2vw, 46px) !important;
+  font-weight: 800 !important;
+  line-height: 1.2 !important;
+  margin-top: 12px !important;
+  margin-bottom: 24px !important;
+  max-width: 680px !important;
+}
+
+.values-inner-title {
+  font-family: 'Manrope', sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 22px !important;         /* Increased title font size */
+  line-height: 1.25 !important;
+  color: #0c0c0c !important;
+  margin-top: 0 !important;
+  margin-bottom: 4px !important;      /* Tighter spacing below title */
+}
+
+/* Elegant gold accent line after the title */
+.values-inner-title::after {
+  content: '' !important;
+  display: block !important;
+  width: 24px !important;
+  height: 2px !important;
+  background-color: rgba(184, 144, 71, 0.35) !important;
+  margin-top: 14px !important;
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s ease !important;
+}
+
+.values-single-card:hover .values-inner-title::after {
+  width: 48px !important;
+  background-color: rgba(184, 144, 71, 0.95) !important;
+}
+
+.values-inner-bottom-box .description.gray {
+  font-family: 'Elms Sans', sans-serif !important;
+  font-size: 14.5px !important;         /* Increased description font size */
+  line-height: 1.7 !important;
+  color: #4c4c4c !important;
+  text-align: justify !important;
+}
+
+/* 4. Tabs Micro interactions */
+.single-solution-tabs-link {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  border-radius: 12px !important;
+  margin-bottom: 6px !important;
+}
+
+.single-solution-tabs-link:hover {
+  background: rgba(184, 144, 71, 0.03) !important;
+  transform: translateX(4px) !important;
+}
+
+.single-solution-tabs-link.w--current {
+  background: rgba(184, 144, 71, 0.06) !important;
+  border-left: 3px solid #b89047 !important;
+  padding-left: 20px !important;
+}
+
+/* 5. Team Section Card Overrides (Uniform with "What we stand for" cards) */
+.team-single-card {
+  position: relative !important;
+  overflow: hidden !important;
+  border-radius: 28px !important; /* Premium rounded corners */
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  height: 380px !important;        /* Portrait proportion height */
+  flex: 1 1 260px !important;      /* Flexbox sizing to support centering */
+  max-width: 290px !important;     /* Consistent card width matching other grids */
+  padding: 0 !important;
+  background-color: #faf9f6 !important;
+  box-shadow: 
+    0 10px 30px -10px rgba(0,0,0,0.1), 
+    0 40px 80px -25px rgba(0,0,0,0.15),
+    0 0 0 1px rgba(0,0,0,0.02) !important; /* Diffused ambient shadow */
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  display: block !important;       /* Override Webflow layouts */
+}
+
+.team-single-card:hover {
+  transform: translateY(-6px) !important;
+  border-color: rgba(184, 144, 71, 0.35) !important; /* Gold border hover highlight */
+  box-shadow: 
+    0 15px 35px -10px rgba(0,0,0,0.15), 
+    0 50px 90px -25px rgba(0,0,0,0.25),
+    0 0 0 1px rgba(184, 144, 71, 0.1) !important;
+}
+
+/* Absolute fill image box */
+.team-image-box {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 0 !important;
+  overflow: hidden !important;
+  z-index: 1 !important;
+  background: transparent !important;
+}
+
+.team-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  transition: transform 1.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  display: block !important;
+}
+
+.team-single-card:hover .team-image {
+  transform: scale(1.06) !important; /* Slow image zoom */
+}
+
+/* Dark gradient overlay for high contrast text readability */
+.team-single-card::after {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.35) 50%, rgba(0, 0, 0, 0.78) 100%) !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+}
+
+/* Cinematic warm plaster spotlight lighting overlay */
+.team-single-card::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(135deg, rgba(255, 235, 200, 0.1) 0%, transparent 60%, rgba(0, 0, 0, 0.15) 100%) !important;
+  z-index: 3 !important;
+  pointer-events: none !important;
+}
+
+/* Text overlay content container at bottom */
+.team-content-box {
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  padding: 24px 20px !important;
+  z-index: 4 !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: flex-end !important;
+  box-sizing: border-box !important;
+  background: transparent !important;
+}
+
+.team-content-left-box {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+  text-align: left !important;
+}
+
+/* Elms Sans font overlay headings */
+.team-content-left-box .secondary-text.black {
+  font-family: 'Elms Sans', sans-serif !important;
+  color: #ffffff !important;         /* Rich white text */
+  font-weight: 700 !important;
+  font-size: 19px !important;
+  margin: 0 !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5) !important;
+}
+
+/* Elms Sans font overlay descriptions */
+.team-content-left-box .description {
+  font-family: 'Elms Sans', sans-serif !important;
+  color: rgba(255, 255, 255, 0.75) !important; /* Soft description text */
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+  margin: 0 !important;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.4) !important;
+}
+
+/* Flex layout to support centered justify-content for wrap rows */
+.team-grid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 32px !important;
+  width: 100% !important;
+}
+
+/* Custom Team Social Box Hover Animations and overrides */
+.social-box-team {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 50% !important;
+  width: 32px !important;
+  height: 32px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.3s ease !important;
+  position: relative !important;
+  overflow: hidden !important;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important;
+}
+
+.social-box-team:hover {
+  background: #b89047 !important; /* Gold hover highlight */
+  border-color: #b89047 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 10px rgba(184, 144, 71, 0.3) !important;
+}
+
+.social-box-team .social-icon-in,
+.social-box-team .social-icon-out {
+  filter: brightness(0) invert(1) !important; /* Pure white social icons */
+}
+
+/* 6. Team Section Centering & Typography Overrides */
+.team-wrap {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  width: 100% !important;
+}
+
+.team-titlle {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: clamp(28px, 3.2vw, 46px) !important;
+  font-weight: 800 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.03em !important;
+  color: #0c0c0c !important;
+  text-align: center !important;
+  margin: 0 auto 48px auto !important;
+  max-width: 720px !important;
+  display: block !important;
+}
+
+/* 7. Spacing & Logo Layout Overrides */
+.testimonial-vh {
+  overflow: visible !important;
+}
+
+.testimonial-sticky {
+  overflow: visible !important;
+  padding-bottom: 140px !important; /* Prevents staggered cards from getting cut off at the bottom */
+}
+
+.section.values {
+  padding-bottom: 0px !important;
+}
+
+.section.brand {
+  padding-top: 10px !important; /* Bring brand section close without cut-off */
+}
+
+/* ─── Service Detail Sub-pages styling ─── */
+.service-detail-page {
+  background-color: #faf9f6 !important; /* Plaster canvas */
+  min-height: 100vh;
+}
+
+.blueprint-grid-bg {
+  background-image: 
+    linear-gradient(rgba(184, 144, 71, 0.012) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(184, 144, 71, 0.012) 1px, transparent 1px) !important;
+  background-size: 24px 24px !important;
+}
+
+.service-intro-callout {
+  border-left: 3px solid #b89047 !important;
+  padding-left: 24px !important;
+  margin-bottom: 40px !important;
+}
+
+.service-section-grid {
+  display: grid !important;
+  grid-template-columns: 0.82fr 1.18fr !important;
+  gap: 80px !important;
+  align-items: start !important;
+  width: 100% !important;
+}
+
+.service-section-sticky-col {
+  position: sticky !important;
+  top: 120px !important;
+  z-index: 5 !important;
+}
+
+.capability-block {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
+  padding-bottom: 32px !important;
+  margin-bottom: 32px !important;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.capability-block:last-child {
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.capability-block:hover h3 {
+  color: #b89047 !important;
+}
+
+.capability-desc {
+  font-family: 'Elms Sans', sans-serif !important;
+  font-size: 15px !important;
+  line-height: 1.8 !important;
+  color: #555555 !important;
+  margin: 0 !important;
+  text-align: justify !important;
+}
+
+@media (max-width: 991px) {
+  .service-section-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+  .service-section-sticky-col {
+    position: static !important;
+    max-width: 100% !important;
+    margin-bottom: 8px !important;
+  }
+}
+
+

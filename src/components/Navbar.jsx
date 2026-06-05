@@ -143,8 +143,7 @@ export default function Navbar() {
                 About
               </NavLink>
               <NavLink
-                to="#"
-                onClick={(e) => e.preventDefault()}
+                to="/services"
                 onMouseEnter={(e) => updatePosition(e.currentTarget)}
                 className={({ isActive }) =>
                   `nav-link _3 white w-nav-link${isActive ? ' w--current' : ''}`
@@ -154,8 +153,7 @@ export default function Navbar() {
                 Services
               </NavLink>
               <NavLink
-                to="#"
-                onClick={(e) => e.preventDefault()}
+                to="/contact"
                 onMouseEnter={(e) => updatePosition(e.currentTarget)}
                 className={({ isActive }) =>
                   `nav-link _4 white w-nav-link${isActive ? ' w--current' : ''}`
@@ -187,8 +185,7 @@ export default function Navbar() {
                 {/* Desktop "Let's Talk" button */}
                 <div className="nav-button-wrap desktop">
                   <Link
-                    to="#"
-                    onClick={(e) => { e.preventDefault(); }}
+                    to="/contact"
                     className="secondary-button w-inline-block"
                   >
                     <div className="secondary-button-content" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -363,8 +360,8 @@ export default function Navbar() {
             About
           </NavLink>
           <NavLink
-            to="#"
-            onClick={(e) => { e.preventDefault(); closeMenu(); }}
+            to="/services"
+            onClick={closeMenu}
             className={({ isActive }) =>
               `mobile-nav-link${isActive ? ' active' : ''}`
             }
@@ -372,8 +369,8 @@ export default function Navbar() {
             Services
           </NavLink>
           <NavLink
-            to="#"
-            onClick={(e) => { e.preventDefault(); closeMenu(); }}
+            to="/contact"
+            onClick={closeMenu}
             className={({ isActive }) =>
               `mobile-nav-link${isActive ? ' active' : ''}`
             }
