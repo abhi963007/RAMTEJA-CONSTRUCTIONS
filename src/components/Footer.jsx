@@ -44,9 +44,9 @@ export default function Footer() {
           
           {/* Bottom Copyright Box */}
           <div className="footer-bottom-box">
-            <div className="footrer-copyright-box">
-              <div className="description gray">© {new Date().getFullYear()} Ramteja Constructions. All Rights Reserved.</div>
-            </div>
+              <div className="description gray">
+                © {new Date().getFullYear()} Ramteja Constructions.<br />All Rights Reserved.
+              </div>
           </div>
         </div>
       </div>

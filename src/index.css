@@ -1941,6 +1941,9 @@ body, html {
 
 .footer-bottom-box .description.gray {
   color: rgba(255, 255, 255, 0.4) !important; /* Legible copyright text on dark footer */
+  font-size: 13px !important; /* Reduced size for clean copyright styling */
+  letter-spacing: 0.5px !important;
+  text-align: center !important;
 }
 
 /* Responsive Overrides */
@@ -1956,16 +1959,126 @@ body, html {
     gap: 20px;
   }
   .motion-graphic-sec {
-    padding: 110px 0;
+    padding-top: 60px !important; /* Reduced top padding to close the white space gap below services button */
+    padding-bottom: 110px !important;
   }
+  .cta-sec {
+    padding: 60px 0 !important; /* Reduced vertical padding for mobile */
+  }
+
   .cta-wrap {
-    flex-direction: column;
-    text-align: center;
-    gap: 30px;
+    display: flex !important; /* Force flex display to stack columns */
+    flex-direction: column !important;
+    gap: 40px !important;
+    padding: 0 16px !important;
+    text-align: left !important;
   }
+
+  .cta-left {
+    gap: 20px !important;
+  }
+
   .cta-title {
-    max-width: 100%;
-    text-align: center;
+    font-size: clamp(26px, 6vw, 36px) !important;
+    text-align: left !important;
+    max-width: 100% !important;
+  }
+
+  .cta-subtitle {
+    font-size: 14.5px !important;
+    line-height: 1.6 !important;
+    text-align: left !important;
+  }
+
+  .cta-contact-details {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important; /* Side-by-side layout on mobile */
+    gap: 12px !important;
+    margin-top: 20px !important;
+    border-top: none !important; /* Remove top divider */
+    padding-top: 0 !important;
+    width: 100% !important;
+  }
+
+  .detail-item {
+    background: rgba(255, 255, 255, 0.5) !important; /* Light card wrapper */
+    border: 1px solid rgba(0, 0, 0, 0.04) !important;
+    border-radius: 16px !important;
+    padding: 12px 14px !important;
+    gap: 6px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .detail-label {
+    font-size: 9.5px !important;
+    letter-spacing: 1px !important;
+  }
+
+  .detail-item a {
+    font-size: 11.5px !important; /* Scaled down for smaller cards */
+    word-break: break-all !important; /* Clean word-wrapping inside cards */
+    gap: 6px !important;
+  }
+
+  .detail-item a .contact-icon {
+    width: 15px !important;
+    height: 15px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .cta-form-container {
+    padding: 20px !important; /* Reduced padding for wider form width */
+    border-radius: 20px !important;
+  }
+
+  .cta-inline-form {
+    gap: 16px !important;
+  }
+
+  .cta-form-row {
+    grid-template-columns: 1fr 1fr !important; /* Keep input fields side-by-side for compactness */
+    gap: 12px !important;
+  }
+
+  .cta-form-group {
+    gap: 6px !important;
+  }
+
+  .cta-form-group label {
+    font-size: 10px !important;
+    letter-spacing: 1px !important;
+  }
+
+  .cta-form-group input {
+    height: 42px !important; /* Compact input height */
+    padding: 10px 14px !important;
+    font-size: 13px !important;
+    border-radius: 8px !important;
+  }
+
+  .cta-form-group textarea {
+    padding: 10px 14px !important;
+    font-size: 13px !important;
+    border-radius: 8px !important;
+    min-height: 80px !important;
+  }
+
+  .project-type-selectors {
+    grid-template-columns: repeat(3, 1fr) !important; /* Keep chips in 3 columns horizontally */
+    gap: 6px !important;
+  }
+
+  .type-chip {
+    font-size: 11px !important;
+    padding: 8px 4px !important;
+  }
+
+  .cta-submit-btn {
+    height: 46px !important; /* Compact button height */
+    font-size: 11.5px !important;
+    letter-spacing: 1.5px !important;
   }
   .footer-main-box-wrap {
     flex-direction: column !important;
@@ -2212,21 +2325,31 @@ body, html {
   }
 }
 
-/* Services Section: un-stack sticky cards on mobile */
+/* Services Section: mobile styles */
 @media screen and (max-width: 767px) {
   .section.hero-service {
-    padding-bottom: 60px !important;
+    padding-bottom: 40px !important; /* Reduced to close the gap on mobile */
   }
 
   .hero-service-single-card {
-    position: relative !important;
-    top: auto !important;
-    z-index: auto !important;
-    margin-bottom: 0 !important;
+    position: sticky !important;
+    margin-bottom: 25vh !important; /* Spacing between cards to increase scroll height/headroom */
   }
 
-  .card-scale-inner {
-    transform: none !important; /* disable scroll-scale animation on mobile */
+  .hero-service-single-card.one {
+    top: 70px !important;
+    z-index: 1 !important;
+  }
+
+  .hero-service-single-card.two {
+    top: 70px !important;
+    z-index: 2 !important;
+  }
+
+  .hero-service-single-card.three {
+    top: 70px !important;
+    z-index: 3 !important;
+    margin-bottom: 0 !important; /* No bottom margin on the final card */
   }
 
   .service-inner-wrap {
@@ -2244,6 +2367,16 @@ body, html {
   .hero-service-image-box {
     position: absolute !important;
     inset: 0% !important;
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0px !important; /* Remove inner border-radius to prevent mobile subpixel gap leaks */
+  }
+
+  .hero-service-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
   }
 
   .hero-service-card-overlay-content {
@@ -2252,12 +2385,44 @@ body, html {
     min-height: 440px !important;
   }
 
+  /* Progressive card heights: Card 1 (smallest) < Card 2 < Card 3 (largest) */
+  .hero-service-single-card.one .hero-service-image-box-wrap,
+  .hero-service-single-card.one .hero-service-card-overlay-content {
+    min-height: 380px !important;
+  }
+
+  .hero-service-single-card.three .hero-service-image-box-wrap,
+  .hero-service-single-card.three .hero-service-card-overlay-content {
+    min-height: 500px !important;
+  }
 
   .section.hero-service .hero-servoce-content,
   .section.hero-service .hero-service-content {
     max-width: 100% !important;
     margin: 16px 0 !important;
     font-size: 16px !important;
+  }
+
+  /* Explore Section Mobile Tuning */
+  .services-explore-footer {
+    margin-top: 70px !important; /* Reduced from 140px to close mobile gap */
+    padding: 0 16px !important;
+  }
+
+  .services-explore-text {
+    font-size: 15px !important;
+    margin-bottom: 24px !important;
+    line-height: 1.6 !important;
+  }
+
+  .services-explore-btn {
+    padding: 10px 24px !important; /* Made the button smaller on mobile as requested */
+    font-size: 11.5px !important;
+    letter-spacing: 1.2px !important;
+  }
+
+  .footer-bottom-box .description.gray {
+    font-size: 11px !important; /* Even more compact on mobile viewports */
   }
 }
 

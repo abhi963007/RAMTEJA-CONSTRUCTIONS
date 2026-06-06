@@ -32,13 +32,6 @@ export default function ServicesSummary() {
     const inner3 = inner3Ref.current;
     if (!wrap || !inner1 || !inner2 || !inner3) return;
 
-    if (window.innerWidth <= 767) {
-      inner1.style.transform = '';
-      inner2.style.transform = '';
-      inner3.style.transform = '';
-      return;
-    }
-
     const SMOOTHING = 0.12;
     let rawProgress      = 0;
     let smoothedProgress = 0;
@@ -48,11 +41,16 @@ export default function ServicesSummary() {
     const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
     const lerp  = (a, b, t)   => a + (b - a) * t;
 
+    const isMobile = window.innerWidth <= 767;
+    const targetScale1 = isMobile ? 0.85 : 0.7;
+    const targetScale2 = isMobile ? 0.90 : 0.8;
+    const targetScale3 = isMobile ? 0.95 : 0.9;
+
     function applyScales(p) {
-      // a-62 keyframes: 0%→30% card1 1→0.7 | 30%→60% card2 1→0.8 | 60%→90% card3 1→0.9
-      inner1.style.transform = `scale(${lerp(1, 0.7, clamp(p / 0.30, 0, 1)).toFixed(4)})`;
-      inner2.style.transform = `scale(${lerp(1, 0.8, clamp((p - 0.30) / 0.30, 0, 1)).toFixed(4)})`;
-      inner3.style.transform = `scale(${lerp(1, 0.9, clamp((p - 0.60) / 0.30, 0, 1)).toFixed(4)})`;
+      // a-62 keyframes: 0%→30% card1 1→targetScale1 | 30%→60% card2 1→targetScale2 | 60%→90% card3 1→targetScale3
+      inner1.style.transform = `scale(${lerp(1, targetScale1, clamp(p / 0.30, 0, 1)).toFixed(4)})`;
+      inner2.style.transform = `scale(${lerp(1, targetScale2, clamp((p - 0.30) / 0.30, 0, 1)).toFixed(4)})`;
+      inner3.style.transform = `scale(${lerp(1, targetScale3, clamp((p - 0.60) / 0.30, 0, 1)).toFixed(4)})`;
     }
 
     function tick() {
