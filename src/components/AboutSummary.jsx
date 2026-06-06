@@ -282,10 +282,10 @@ export default function AboutSummary() {
                     const intro = lines[0] || '';
                     const statements = lines.slice(1);
                     return (
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', textAlign: 'left' }}>
+                      <div className="narrative-desc-inner-wrap" style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                         {statements.length > 0 ? (
                           <>
-                            <div style={{
+                            <div className="narrative-desc-intro" style={{
                               fontSize: 'clamp(17px, 2vw, 22px)',
                               fontWeight: '400',
                               color: 'rgba(255, 255, 255, 0.7)',
@@ -296,39 +296,43 @@ export default function AboutSummary() {
                             }}>
                               {intro}
                             </div>
-                            {statements.map((stmt, idx) => (
-                              <div
-                                key={idx}
-                                style={{
-                                  fontSize: 'clamp(24px, 3.2vw, 38px)',
-                                  fontWeight: '800',
-                                  color: '#ffffff',
-                                  lineHeight: '1.15',
-                                  letterSpacing: '-0.5px',
-                                  display: 'flex',
-                                  alignItems: 'center',
-                                  gap: '16px',
-                                  fontFamily: "'Montserrat', sans-serif",
-                                  animation: `fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) ${0.1 + idx * 0.15}s forwards`,
-                                  opacity: 0,
-                                  transform: 'translateY(16px)'
-                                }}
-                              >
-                                <span style={{
-                                  width: '8px',
-                                  height: '8px',
-                                  borderRadius: '50%',
-                                  backgroundColor: steps[activeStep].themeColor || '#5181ed',
-                                  display: 'inline-block',
-                                  boxShadow: `0 0 12px ${steps[activeStep].themeColor || '#5181ed'}`,
-                                  flexShrink: 0
-                                }} />
-                                {stmt}
-                              </div>
-                            ))}
+                            <div className="narrative-desc-statements-container" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                              {statements.map((stmt, idx) => (
+                                <div
+                                  key={idx}
+                                  className="narrative-desc-statement-row"
+                                  style={{
+                                    fontSize: 'clamp(24px, 3.2vw, 38px)',
+                                    fontWeight: '800',
+                                    color: '#ffffff',
+                                    lineHeight: '1.15',
+                                    letterSpacing: '-0.5px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '16px',
+                                    fontFamily: "'Montserrat', sans-serif",
+                                    animation: `fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) ${0.1 + idx * 0.15}s forwards`,
+                                    opacity: 0,
+                                    transform: 'translateY(16px)'
+                                  }}
+                                >
+                                  <span style={{
+                                    width: '8px',
+                                    height: '8px',
+                                    borderRadius: '50%',
+                                    backgroundColor: steps[activeStep].themeColor || '#5181ed',
+                                    display: 'inline-block',
+                                    boxShadow: `0 0 12px ${steps[activeStep].themeColor || '#5181ed'}`,
+                                    flexShrink: 0
+                                  }} />
+                                  {stmt}
+                                </div>
+                              ))}
+                            </div>
                           </>
                         ) : (
                           <div
+                            className="narrative-desc-statement-row single"
                             style={{
                               fontSize: 'clamp(21px, 2.8vw, 34px)',
                               fontWeight: '800',

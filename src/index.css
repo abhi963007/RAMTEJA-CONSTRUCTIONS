@@ -569,23 +569,23 @@ body, html {
 }
 
 /* Fade masks on left & right edges */
-.brand-ticker-section::before,
-.brand-ticker-section::after {
+.brand-ticker-carousel-wrapper::before,
+.brand-ticker-carousel-wrapper::after {
   content: '';
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 120px;
+  width: 80px; /* Reduced from 120px to prevent fading logos and text too early */
   z-index: 2;
   pointer-events: none;
 }
-.brand-ticker-section::before {
+.brand-ticker-carousel-wrapper::before {
   left: 0;
-  background: linear-gradient(to right, #f5f5f5 0%, transparent 100%);
+  background: linear-gradient(to right, #ffffff 0%, transparent 100%);
 }
-.brand-ticker-section::after {
+.brand-ticker-carousel-wrapper::after {
   right: 0;
-  background: linear-gradient(to left, #f5f5f5 0%, transparent 100%);
+  background: linear-gradient(to left, #ffffff 0%, transparent 100%);
 }
 
 /* The scrolling track */
@@ -595,7 +595,7 @@ body, html {
 }
 
 .brand-ticker-track.scroll-left {
-  animation: brand-scroll 28s linear infinite;
+  animation: brand-scroll 16s linear infinite; /* Sped up from 28s */
 }
 
 .brand-ticker-track:hover {
@@ -623,13 +623,38 @@ body, html {
   width: auto !important;
   max-width: 380px !important;
   object-fit: contain !important;
-  filter: grayscale(1) opacity(0.55) !important;
+  filter: grayscale(1) opacity(0.85) !important; /* Increased from 0.55 */
   transition: all 0.3s ease !important;
 }
 
 .brand-logo:hover {
   filter: grayscale(0) opacity(1) !important;
   transform: scale(1.05);
+}
+
+@media screen and (max-width: 767px) {
+  .brand-logo {
+    height: 65px !important;
+    max-width: 150px !important;
+  }
+  .brand-ticker-set {
+    gap: 24px !important;
+    padding: 0 12px !important;
+  }
+  .brand-ticker-section {
+    gap: 20px !important;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .brand-logo {
+    height: 52px !important; /* Scale height down to ensure 2.5 to 3 logos fit on narrow screens */
+    max-width: 120px !important; /* Limit max-width to prevent wide logos from taking up the entire screen */
+  }
+  .brand-ticker-set {
+    gap: 16px !important; /* Narrower gap for compact layout */
+    padding: 0 8px !important;
+  }
 }
 
 @keyframes brand-scroll {
@@ -672,20 +697,37 @@ body, html {
     grid-template-columns: 1fr !important;
     gap: 48px !important;
   }
+  .hero-right-col {
+    order: -1 !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  .hero-service-tags {
+    justify-content: center !important;
+  }
+  .hero-title {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .hero-title br {
+    display: none !important;
+  }
   .hero-left-col {
     flex-direction: row !important;
     align-items: center !important;
+    justify-content: center !important;
     gap: 0 !important;
-    flex-wrap: wrap !important;
+    flex-wrap: nowrap !important;
   }
   .hero-stat-card {
-    padding: 0 28px 0 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
   }
   .hero-stat-divider {
     width: 1px !important;
     height: 40px !important;
     background: rgba(255,255,255,0.2) !important;
-    margin-right: 28px !important;
+    margin: 0 24px !important;
   }
   .hero-left-desc {
     display: none !important;
@@ -696,6 +738,10 @@ body, html {
   .section.hero {
     padding-top: 140px !important;
     padding-bottom: 70px !important;
+  }
+  .hero-title-highlight {
+    white-space: normal !important;
+    font-size: clamp(32px, 8vw, 48px) !important;
   }
   .hero-stat-value {
     font-size: 24px !important;
@@ -711,14 +757,26 @@ body, html {
     padding-bottom: 50px !important;
   }
   .hero-left-col {
-    flex-direction: column !important;
-    align-items: flex-start !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .hero-stat-card {
+    padding: 0 !important;
+    text-align: center !important;
   }
   .hero-stat-divider {
-    width: 100% !important;
-    height: 1px !important;
-    margin: 0 !important;
-    margin-bottom: 0 !important;
+    width: 1px !important;
+    height: 36px !important;
+    margin: 0 12px !important;
+  }
+  .hero-stat-value {
+    font-size: clamp(15px, 4.4vw, 20px) !important;
+  }
+  .hero-stat-label {
+    font-size: clamp(9px, 2.5vw, 11px) !important;
+    letter-spacing: 0.8px !important;
   }
   .hero-service-tags {
     gap: 8px !important;
@@ -1116,6 +1174,7 @@ body, html {
 
 /* Premium bottom CTA button styles */
 .storyboard-cta-btn {
+  font-family: 'Montserrat', sans-serif !important;
   background: #ffffff !important;
   color: #000000 !important;
   border: 1px solid #b89047 !important;
@@ -1944,7 +2003,29 @@ body, html {
 
 @media screen and (max-width: 991px) {
   .mobile-menu-toggle {
-    display: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 44px !important;
+    height: 44px !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    border-radius: 8px !important;
+    color: #ffffff !important;
+    cursor: pointer !important;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease !important;
+    flex-shrink: 0 !important;
+    outline: none !important;
+  }
+
+  .mobile-menu-toggle:hover {
+    background: rgba(255, 255, 255, 0.16) !important;
+  }
+
+  .mobile-menu-toggle.is-active {
+    background: rgba(184, 144, 71, 0.14) !important;
+    border-color: rgba(184, 144, 71, 0.45) !important;
+    color: #b89047 !important;
   }
 
   /* Hide Webflow desktop nav on mobile — React drawer handles it */
@@ -2185,11 +2266,28 @@ body, html {
   .navbar-logo-image {
     height: 72px !important;
   }
+  .navbar-logo-text {
+    font-size: 17px !important;
+  }
 }
 
 @media screen and (max-width: 479px) {
   .navbar-logo-image {
     height: 60px !important;
+  }
+  .navbar-logo-text {
+    font-size: 14px !important;
+    letter-spacing: 0.8px !important;
+  }
+  .project-type-selectors {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+  .type-chip {
+    padding: 12px 16px !important;
+    font-size: 14px !important;
+    white-space: normal !important;
+    height: auto !important;
   }
 }
 
@@ -2296,42 +2394,105 @@ body, html {
     padding: 0 12px !important;
   }
   
+  /* Hide playing steps (01, 02, 03) and controller on mobile view */
   .storyboard-screen-controls {
-    padding: 10px 16px !important;
-    gap: 12px !important;
-    border-radius: 30px !important;
+    display: none !important;
   }
   
-  .play-pause-btn {
-    width: 32px !important;
-    height: 32px !important;
-  }
-  
-  .play-pause-btn svg {
-    width: 10px !important;
-    height: 10px !important;
-  }
-  
-  .storyboard-timeline {
-    gap: 10px !important;
-  }
-  
-  .timeline-segment-wrapper {
-    gap: 4px !important;
-  }
-  
-  .timeline-segment-wrapper .segment-label {
-    font-size: 10px !important;
-    letter-spacing: 0.5px !important;
+  .storyboard-narrative-side {
+    min-height: auto !important;
+    padding: 32px 0 !important;
+    align-items: center !important;
     text-align: center !important;
   }
   
-  .timeline-segment-wrapper .segment-label .step-name {
-    display: none !important; /* Hide step description on mobile to prevent overflow */
+  .narrative-content-fade {
+    align-items: center !important;
+    width: 100% !important;
   }
   
-  .timeline-segment {
-    height: 3px !important;
+  .narrative-pill {
+    margin: 0 auto !important;
+  }
+
+  /* Centered block layout with vertically aligned list items */
+  .narrative-desc-inner-wrap {
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+  
+  .narrative-desc-intro {
+    font-size: clamp(14px, 3.8vw, 17px) !important;
+    text-align: center !important;
+    margin-bottom: 8px !important;
+    width: 100% !important;
+  }
+
+  .narrative-desc-statements-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important; /* Vertically aligns bullet dots in a straight line */
+    align-self: center !important; /* Centers the whole bullet block on the screen */
+    gap: 12px !important;
+    width: auto !important;
+  }
+
+  .narrative-desc-statement-row {
+    font-size: clamp(18px, 4.5vw, 22px) !important;
+    gap: 12px !important;
+    display: flex !important;
+    align-items: center !important;
+    text-align: left !important;
+  }
+
+  .narrative-desc-statement-row.single {
+    align-self: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    font-size: clamp(18px, 4.5vw, 22px) !important;
+  }
+
+  /* Optimize execution risks and details lists into horizontal centered pill tags */
+  .narrative-points-box {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 8px 12px !important;
+    width: 100% !important;
+    margin-top: 10px !important;
+  }
+  .key-point-row {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding: 5px 10px !important;
+    border-radius: 100px !important;
+    align-items: center !important;
+    gap: 6px !important;
+    display: inline-flex !important;
+  }
+  .key-point-icon {
+    margin-top: 0 !important;
+    color: inherit !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+  .key-point-icon svg {
+    width: 12px !important;
+    height: 12px !important;
+  }
+  .key-point-text {
+    font-size: clamp(10px, 3.2vw, 12px) !important;
+    font-weight: 600 !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    letter-spacing: 0.3px !important;
+  }
+
+  /* Slightly reduce CTA button size on mobile */
+  .storyboard-cta-btn {
+    padding: 12px 28px !important;
+    font-size: 13.5px !important;
   }
 }
 

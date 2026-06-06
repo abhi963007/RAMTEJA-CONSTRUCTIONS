@@ -410,18 +410,19 @@ export default function About() {
         }
       `}</style>
 
-      {/* 3. Brand Section */}
       <section className="section brand brand-ticker-section" style={{ paddingTop: '56px', paddingBottom: '0px' }}>
-        <div className="brand-ticker-track scroll-left">
-          {[0, 1, 2, 3].map((clone) => (
-            <div className="brand-ticker-set" key={clone} aria-hidden={clone > 0 ? 'true' : undefined}>
-              {brands.map((logo, i) => (
-                <div className="brand-ticker-item" key={i}>
-                  <img loading="lazy" src={logo} alt={`brand-${i + 1}`} className="brand-logo" />
-                </div>
-              ))}
-            </div>
-          ))}
+        <div className="brand-ticker-carousel-wrapper" style={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
+          <div className="brand-ticker-track scroll-left">
+            {[0, 1, 2, 3].map((clone) => (
+              <div className="brand-ticker-set" key={clone} aria-hidden={clone > 0 ? 'true' : undefined}>
+                {brands.map((logo, i) => (
+                  <div className="brand-ticker-item" key={i}>
+                    <img loading="lazy" src={logo} alt={`brand-${i + 1}`} className="brand-logo" />
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
         <div className="container" style={{ marginTop: '32px' }}>
           <div data-w-id="24c66f18-04a3-6af1-7e61-cf3a883076ef" style={{ opacity: 1 }} className="brand-wrap">

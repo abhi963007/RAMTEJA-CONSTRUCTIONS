@@ -13,16 +13,18 @@ export default function BrandTicker() {
       <div className="brand-ticker-label-wrap">
         <p className="brand-ticker-label">we're proud to partner with best-in-class clients</p>
       </div>
-      <div className="brand-ticker-track scroll-left">
-        {[0, 1, 2, 3].map((clone) => (
-          <div className="brand-ticker-set" key={clone} aria-hidden={clone > 0 ? 'true' : undefined}>
-            {brands.map((logo, i) => (
-              <div className="brand-ticker-item" key={i}>
-                <img loading="lazy" src={logo} alt={`brand-${i + 1}`} className="brand-logo" />
-              </div>
-            ))}
-          </div>
-        ))}
+      <div className="brand-ticker-carousel-wrapper" style={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
+        <div className="brand-ticker-track scroll-left">
+          {[0, 1, 2, 3].map((clone) => (
+            <div className="brand-ticker-set" key={clone} aria-hidden={clone > 0 ? 'true' : undefined}>
+              {brands.map((logo, i) => (
+                <div className="brand-ticker-item" key={i}>
+                  <img loading="lazy" src={logo} alt={`brand-${i + 1}`} className="brand-logo" />
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
